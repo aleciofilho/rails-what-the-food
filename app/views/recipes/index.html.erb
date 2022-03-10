@@ -1,1 +1,12 @@
 <h1>Index of recipe</h1>
+
+<div class="container" data-controller="display-recipes">
+
+  <form data-action="submit->display-recipes#listRecipes">
+    <input type="text" placeholder="Enter a ingredient" data-display-recipes-target="input">
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+  <div class="card recipes" data-display-recipes-target="display">
+    
+  </div>
+</div>
