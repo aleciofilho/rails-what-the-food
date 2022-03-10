@@ -1,8 +1,10 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  background: #C0D8C0;
 }
 
+.toggler-design{
+
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -10,3 +12,26 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+.container-fluid {
+  justify-content: space-around;
+  h1{
+    margin: 0;
+    color: #DD4A48;
+  }
+}
+
+.nav-toggler:focus {
+  box-shadow: 0 0 0 0;
+}
+
+@media (max-width: 600px) {
+  .navbar-lewagon .navbar-brand img {
+    display: none;
+  }
+}
+
+// @media (max-width: 375px) {
+//   .container-fluid h1{
+//     font-size: 10px;
+//   }
+// }
