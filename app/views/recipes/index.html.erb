@@ -1,1 +1,16 @@
 <h1>Index of recipe</h1>
+
+
+<div class="container">
+  <% @recipes.each do |recipe| %>
+    <div class="card" style="width: 18rem;">
+      <%= image_tag "#{recipe.url}", class: "card-img-top" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= recipe.name %></h5>
+        <p class="card-text"><%= recipe.description %></p>
+        <i class="fa-solid fa-clock"></i>
+        <p class="card-text"><%= recipe.prep_time %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

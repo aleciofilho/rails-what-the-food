@@ -1,1 +1,8 @@
 <h1>Index Categories</h1>
+
+<% @categories.each do |category| %>
+  <h2><%= category.name %></h2>
+  <% category.ingredients.first(10).each do |i|%>
+    <span><%= i.name %>,</span>
+  <%end%>
+<% end %>
