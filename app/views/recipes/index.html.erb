@@ -1,12 +1,22 @@
-<h1>Index of recipe</h1>
-
 <div class="container" data-controller="display-recipes">
+  <h1>Index of recipe</h1>
 
-  <form data-action="submit->display-recipes#listRecipes">
-    <input type="text" placeholder="Enter a ingredient" data-display-recipes-target="input">
-    <input type="submit" value="Submit" class="btn btn-primary">
-  </form>
-  <div class="card recipes" data-display-recipes-target="display">
+  <%= form_tag recipes_path, method: :get do %>
+    <%= text_field_tag :ingredients,
+      params[:ingredients],
+      class: "form-control",
+      placeholder: "Type or ingredients"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
 
+  <div class="display">
+    <% @recipes.each do |recipe| %>
+      <div class="card">
+        <%= image_tag "#{recipe['url']}" %>
+        <h3><%= recipe['title'] %></h3>
+        <p><%= recipe['likes'] %></p>
+      </div>
+    <% end %>
   </div>
 </div>
