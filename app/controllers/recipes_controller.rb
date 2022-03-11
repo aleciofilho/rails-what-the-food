@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
     else
       # @recipes = Recipe.all
     end
+
   end
 
   def show; end
