@@ -1,10 +1,12 @@
+.container-nav-bar{
+  width: 100%;
+  height: 100px;
+}
+
 .navbar-lewagon {
-  background: #C0D8C0;
+  background: white;
 }
 
-.toggler-design{
-
-}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -12,26 +14,8 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
-.container-fluid {
-  justify-content: space-around;
-  h1{
-    margin: 0;
-    color: #DD4A48;
-  }
+.navbar-brand{
+  border: 1px solid #DD4A48;
+  padding: 10px 30px;
+  border-radius: 5px;
 }
-
-.nav-toggler:focus {
-  box-shadow: 0 0 0 0;
-}
-
-@media (max-width: 600px) {
-  .navbar-lewagon .navbar-brand img {
-    display: none;
-  }
-}
-
-// @media (max-width: 375px) {
-//   .container-fluid h1{
-//     font-size: 10px;
-//   }
-// }

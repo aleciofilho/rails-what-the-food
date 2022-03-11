@@ -1,37 +1,42 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex justify-content-between align-items-center">
-  <div class="container-fluid">
 
-    <% if user_signed_in? %>
-      <%= link_to "#", class: "nav-link"  do %>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
-      <% end %>
 
-    <% else %>
-      <span class="nav-item">
-        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-      </span>
+  <div class="container-nav-bar">
+  
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "logo3.png" %>
     <% end %>
 
-    <%= link_to "What the Food", root_path, class: "nav-link" %>
-    
 
-
-    <button class="navbar-toggler nav-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon toggler-design"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="menu">
       <ul class="navbar-nav me-auto">
-        <%= link_to "#", class: "navbar-brand" do %>
-          <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-        <% end %>
+        <li class="nav-item active">
+          <%= link_to "Home", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Messages", "#", class: "nav-link" %>
+        </li>
+      </ul>
 
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    </div>
+    </div>
+
+
+        <ul>
+        <%# if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
           </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+        <%# else %>
+          <!--li class="nav-item"-->
+            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <!--/li-->
+        <%# end %>
       </ul>
     </div>
   </div>
-</div>
