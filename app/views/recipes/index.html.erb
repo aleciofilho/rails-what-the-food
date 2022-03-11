@@ -24,9 +24,9 @@
     <div class="row justify-content-center">
     <% if @recipes != nil %>
       <% @recipes.each do |recipe| %>
-        <div class="card col-4 col-sm-8 m-1" style="width: 18rem;" data-controller="show-details">
+        <div class="card col-4 col-sm-8 m-1 fit-content" style="width: 18rem;" data-controller="show-details" data-show-details-target="card">
           <%= image_tag recipe['image'], class: "card-img-top" %>
-          <div class="card-body recipe">
+          <div class="card-body ">
             <a href="#" class="card-title" data-action="click->show-details#show"><%= recipe['title'] %></a>
             <p class="card-text"><%= recipe['likes'] %></p>
 

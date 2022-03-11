@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["id", "info"]
+  static targets = ["id", "info", "card"]
 
   connect() {
     console.log('Hello, Recipe Card!');
@@ -32,6 +32,7 @@ export default class extends Controller {
     event.preventDefault();
     this.infoTarget.innerHTML = '';
     this.infoTarget.classList.add('d-none');
+    console.log(this.cardTarget);
     this.fetchRecipe(this.idTarget.innerText);
   }
 }
