@@ -1,7 +1,7 @@
-<div class="container" data-controller="display-recipes">
+<div class="container">
   <h1>Index of recipe</h1>
 
-  <%= form_tag recipes_path, method: :get do %>
+  <%= form_tag recipes_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :ingredients,
       params[:ingredients],
       class: "form-control",
@@ -10,13 +10,16 @@
     <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
-  <div class="display">
-    <% @recipes.each do |recipe| %>
-      <div class="card">
-        <%= image_tag "#{recipe['url']}" %>
-        <h3><%= recipe['title'] %></h3>
-        <p><%= recipe['likes'] %></p>
-      </div>
-    <% end %>
-  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <% @recipes.each do |recipe| %>
+        <div class="card col-4 col-sm-8 m-1" style="width: 18rem;">
+          <%= image_tag recipe['image'], class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= recipe['title'] %></h5>
+            <p class="card-text"><%= recipe['likes'] %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
 </div>
