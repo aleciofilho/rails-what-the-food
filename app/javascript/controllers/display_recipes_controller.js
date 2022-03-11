@@ -8,14 +8,16 @@ export default class extends Controller {
   }
 
   insertRecipes (data) {
-    this.displayTarget.classList.remove('d-none')
+    this.displayTarget.classList.remove('d-none');
     data.forEach(recipe => {
       this.displayTarget.insertAdjacentHTML('beforeend',
-      `<div class="card">
+      `<div class="card" data-controller="show-details">
         <img src="${recipe['image']}">
         <div class='info'>
-          <h3>${recipe['title']}</h3>
+          <a href="#" data-action="click->show-details#show">${recipe['title']}</a>
           <p>${recipe['likes']} likes</p>
+          <span hidden data-show-details-target="id">${recipe['id']}</span>
+          <div class="more-info" data-show-details-target='info'></div>
         </div>
       </div>`)
     });
