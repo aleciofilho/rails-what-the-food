@@ -4,7 +4,6 @@ export default class extends Controller {
   static targets = ["id", "info", "card"]
 
   connect() {
-    console.log('Hello, Recipe Card!');
   }
 
   insertDetails(data) {
@@ -23,7 +22,6 @@ export default class extends Controller {
     fetch(url)
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
         this.insertDetails(data)
       });
   }
@@ -32,7 +30,6 @@ export default class extends Controller {
     event.preventDefault();
     this.infoTarget.innerHTML = '';
     this.infoTarget.classList.add('d-none');
-    console.log(this.cardTarget);
     this.fetchRecipe(this.idTarget.innerText);
   }
 }
