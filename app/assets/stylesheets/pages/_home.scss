@@ -124,7 +124,22 @@
   width: 100%;
   height: 150px;
 }
-.link-cicle {
+.link-cicle-start {
+  border: 1px solid #728f72;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background-image: url("cook-peaple.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.link-cicle-start:hover {
+  border: 2px solid #DD4A48;
+  box-shadow: 1px 3px 6px #DD4A48;
+  transition: 0.4s;
+}
+.link-cicle-center {
   border: 1px solid #728f72;
   border-radius: 100%;
   width: 100px;
@@ -133,11 +148,35 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+.link-cicle-center:hover {
+  border: 2px solid #DD4A48;
+  box-shadow: 1px 3px 6px #DD4A48;
+  transition: 0.4s;
+}
+.link-cicle-end {
+  border: 1px solid #728f72;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background-image: url("cook-peaple.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.link-cicle-end:hover {
+  border: 2px solid #DD4A48;
+  box-shadow: 1px 3px 6px #DD4A48;
+  transition: 0.4s;
 }
 .cicles-text {
   background-color: white;
-}
-.link-cicle-center {
-  width: 200px;
-  height: 200px;
+  margin: 0;
+  padding: 140px 0;
+    h2{
+      margin-bottom: 20px;
+      color: #728f72;
+    }
 }
