@@ -110,3 +110,34 @@
 .btn-cards {
   padding: 3px;
 }
+// -------------------
+.container-cicles {
+  display: flex;
+  justify-content: space-between;
+}
+.link-cicles{
+  height: 700px;
+  padding: 70px 40px;
+  background-color: white;
+}
+.link-container {
+  width: 100%;
+  height: 150px;
+}
+.link-cicle {
+  border: 1px solid #728f72;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background-image: url("cookbook.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.cicles-text {
+  background-color: white;
+}
+.link-cicle-center {
+  width: 200px;
+  height: 200px;
+}
