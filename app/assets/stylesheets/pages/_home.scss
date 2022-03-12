@@ -18,7 +18,7 @@
     color: #DD4A48;
   }
   p{
-    color: #ECB390;
+    color: #DD4A48;
   }
 }
 .btn-home{
@@ -31,12 +31,12 @@
   color: #DD4A48;
   border: 1px solid #DD4A48;
   transition: 0.6s;
-  box-shadow: 1px 1px 7px #DD4A48;
+  box-shadow: 1px 1px 5px #DD4A48;
 }
 //------------- carousel -------------
 
 .carousel-home {
-  background-image: linear-gradient(rgba(155, 194, 154, 0.4),rgba(0,0,0,0.4)), url("cookbook.jpg");
+  background-image: linear-gradient(to right, #dd4b4893, #728f72b9);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 40px;
@@ -71,13 +71,20 @@
   opacity: .7;
   margin: 0;
 }
-
-
+.card-trip-bg {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("cookbook.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+    h4 {
+      color: #ffffff;
+    }
+}
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  // justify-content: space-between;
+  // align-items: flex-end;
   position: relative;
 }
 
@@ -89,5 +96,17 @@
 }
 
 .card-trip-infos {
-  height: 100px;
+  // height: 100px;
+  margin: 0;
+}
+
+.card-infos-body{
+  h6{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 17px;
+  }
+}
+.btn-cards {
+  padding: 3px;
 }

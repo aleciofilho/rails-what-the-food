@@ -1,5 +1,7 @@
 <div class="container-home">
 
+<%# ------------- Banner ------------- %>
+
     <div class="text-banner col-6">
       <h1>What The Food - Find your recipe</h1>
       <p>We'll find the perfect recipe for the ingredients you have!</p>
@@ -10,6 +12,7 @@
 
 </div>
 
+<%# ------------- carousel ------------- %>
 
 <div id="carouselExampleCaptions" class="carousel slide carousel-home" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -19,15 +22,14 @@
   </div>
   <div class="carousel-inner carousel-card">
     <div class="carousel-item active">
-      <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+      <div class="card-trip ">
+        <div class="card-trip-bg d-flex justify-content-center align-items-center">
+          <h4>Choose your ingredients or add your own ingredients</h4>
+        </div>
         <div class="card-trip-infos">
-          <div>
-            <h2>Title here</h2>
-            <p>Short description here!</p>
+          <div class="card-infos-body d-flex justify-content-center align-items-center">
+            <h6>access our ingredients list and find your recipets</h6><button class="btn btn-home btn-cards">Here</button>
           </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
     </div>
