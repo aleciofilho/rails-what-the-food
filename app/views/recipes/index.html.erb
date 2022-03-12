@@ -1,1 +1,41 @@
-<h1>Index of recipe</h1>
+<div class="container">
+  <h1>Index of recipe</h1>
+
+  <!--
+   <%= form_tag recipes_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a recipe"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %> %>
+  -->
+  <%= form_tag recipes_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :ingredients,
+      params[:ingredients],
+      class: "form-control",
+      placeholder: "Type or ingredients"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+  <div class="container">
+    <div class="row justify-content-center">
+    <% if @recipes != nil %>
+      <% @recipes.each do |recipe| %>
+        <div class="card col-4 col-sm-8 m-1 fit-content" style="width: 18rem;" data-controller="show-details" data-show-details-target="card">
+          <%= image_tag recipe['image'], class: "card-img-top" %>
+          <div class="card-body ">
+            <a href="#" class="card-title" data-action="click->show-details#show"><%= recipe['title'] %></a>
+            <p class="card-text"><%= recipe['likes'] %></p>
+
+            <span hidden data-show-details-target="id"><%= recipe['id'] %></span>
+            <div class="more-info" data-show-details-target="info">
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+</div>
