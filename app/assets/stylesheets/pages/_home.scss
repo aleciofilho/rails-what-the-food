@@ -21,6 +21,8 @@
     color: #DD4A48;
   }
 }
+
+// -----------botton-----------
 .btn-home{
   color: #728f72;
   background-color: transparent;
@@ -33,85 +35,22 @@
   transition: 0.6s;
   box-shadow: 1px 1px 5px #DD4A48;
 }
-//------------- carousel -------------
-
-.carousel-home {
-  background-image: linear-gradient(to right, #dd4b4893, #728f72b9);
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 40px;
+.btn-text {
+  display: inline-block;
+  margin: 0 auto;
 }
-.carousel-card {
-  width: 600px;
-  margin: 30px auto;
-}
-//------------- cards-carousel -------------
-
-.card-trip {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
+.btn-cicle-text {
+  padding: 5px;
+  font-size: 13px;
 }
 
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
+//------------- cicles -------------
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-.card-trip-bg {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("cookbook.jpg");
-  background-position: center;
-  background-size: cover;
-  height: 200px;
-    h4 {
-      color: #ffffff;
-    }
-}
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  // justify-content: space-between;
-  // align-items: flex-end;
-  position: relative;
-}
-
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 100px;
-  height: 100px;
-}
-
-.card-trip-infos {
-  // height: 100px;
-  margin: 0;
-}
-
-.card-infos-body{
-  h6{
-    display: inline-block;
-    margin-right: 5px;
-    font-size: 17px;
+.cicles-text {
+  h4 {
+    color: #DD4A48;
   }
 }
-.btn-cards {
-  padding: 3px;
-}
-// -------------------
 .container-cicles {
   display: flex;
   justify-content: space-between;
@@ -127,6 +66,7 @@
 }
 .link-cicle-start {
   border: 1px solid #728f72;
+  // border-width: 10px;
   border-radius: 100%;
   width: 100px;
   height: 100px;
@@ -162,7 +102,7 @@
   border-radius: 100%;
   width: 100px;
   height: 100px;
-  background-image: url("cook-peaple.jpg");
+  background-image: url("profile1.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -181,4 +121,87 @@
       color: #728f72;
     }
 }
+
+//------------- carousel -------------
+
+.carousel-home {
+  background-image: linear-gradient(to right, #ffffff93, #728f72b9);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+.carousel-card {
+  width: 600px;
+  margin: 30px auto;
+}
+
+//------------- cards-carousel -------------
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+.card-trip-bg {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("bg13.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+    h4 {
+      color: #ffffff;
+    }
+}
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 430px;
+  top: -100px;
+  width: 200px;
+  height: 200px;
+}
+
+.card-trip-infos {
+  // height: 100px;
+  margin: 0;
+}
+
+.card-infos-body{
+  h6{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 17px;
+  }
+}
+.btn-cards {
+  padding: 3px;
+}
+// -------------------
+
 // ------------------------------

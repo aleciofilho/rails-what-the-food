@@ -47,10 +47,13 @@
       </div>
       <div class="cicles-text col-6">
         <h2>Discover the three categories of What the food</h2>
-        <p>At What The Food you will find three categories, the ingredients category, where you select the ingredients you have and we look for a recipe that's ideal for you!</p>
-        <p>You will also find here a social network of cooks from all over the world. where you can exchange recipes and bookmark your favorites</p>
-        <p>And finally an incredible profile where you will have all your favorite recipes, the most used ingredients and your recipe history</p>
-        <h6>Enjoy!</h6>
+
+        <p>At What The Food you will find three categories, the ingredients category, where you select the ingredients you have and we look for a recipe that's ideal for you! <button class="btn btn-home btn-cicle-text">Find your recipe</button></p>
+        <p>You will also find here a social network of cooks from all over the world. where you can exchange recipes and bookmark your favorites <button class="btn btn-home btn-cicle-text">Social network</button></p>
+        <p>And finally an incredible profile where you will have all your favorite recipes, the most used ingredients and your recipe history <button class="btn btn-home btn-cicle-text">My profile</button></p>
+        <div class="d-flex justify-content-center mt-4">
+          <h4>Enjoy!</h4>
+        </div>
       </div>
     </div>
   </div>
@@ -69,17 +72,23 @@
   </div>
   <div class="carousel-inner carousel-card">
     <div class="carousel-item active">
-      <div class="card-trip ">
-        <div class="card-trip-bg d-flex justify-content-center align-items-center">
-          <h4>Choose your ingredients or add your own ingredients</h4>
-        </div>
+      <div class="card-trip">
+        <%= image_tag "bg16" %>
         <div class="card-trip-infos">
-          <div class="card-infos-body d-flex justify-content-center align-items-center">
-            <h6>access our ingredients list and find your recipets</h6><button class="btn btn-home btn-cards">Here</button>
+          <div>
+            <h2>Title here</h2>
+            <p>Short description here!</p>
           </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
     </div>
+
     <div class="carousel-item">
       <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
@@ -97,6 +106,7 @@
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
+
     <div class="carousel-item">
       <div class="card-trip">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
