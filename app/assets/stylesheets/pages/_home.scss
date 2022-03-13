@@ -134,7 +134,12 @@
   width: 600px;
   margin: 30px auto;
 }
-
+.carousel-text {
+  position: absolute;
+  top: 30px;
+  left: 155px;
+  width: 350px;
+}
 //------------- cards-carousel -------------
 
 .card-trip {
@@ -174,8 +179,6 @@
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
-  // justify-content: space-between;
-  // align-items: flex-end;
   position: relative;
 }
 
@@ -188,8 +191,7 @@
 }
 
 .card-trip-infos {
-  // height: 100px;
-  margin: 0;
+  width: 100%;
 }
 
 .card-infos-body{
@@ -202,6 +204,44 @@
 .btn-cards {
   padding: 3px;
 }
-// -------------------
+.btn-carousel {
+  color: #DD4A48;
+}
 
-// ------------------------------
+//------------- About us -------------
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  background-image: url("abouts3.png");
+}
+
+.banner h2 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 27px;
+  font-weight: bold;
+}
+.banner h3 {
+  margin: 0;
+  color: #728f72;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 17px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.container-aboutus {
+  width: 400px;
+  margin-left: 70px;
+  h2, p{
+    color: #DD4A48;
+  }
+}
