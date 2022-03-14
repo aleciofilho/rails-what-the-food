@@ -2,7 +2,6 @@
   box-sizing: border-box;
   background: white;
   padding: 10px 20px;
-  margin-top: 50px;
   border-radius: 3px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   h2 {
@@ -18,13 +17,23 @@
 
 .form-inputs {
   line-height: 44px;
+  color: #728F72;
+}
+.form-inputs {
+    input:focus, input:active {
+      box-shadow: 1px 1px 5px rgba(235, 222, 222, 0.1);
+      /* border-color: none; */
+      outline: #728F72 auto 5px !important;
+      background-color: rgb(255, 255, 255);
+    }
 }
 
 .login-page {
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  height: 80vh;
+  height: 100vh;
   width: 100vw;
 }
 
@@ -36,6 +45,7 @@
   width: 100%;
   margin-bottom: 20px
 }
+
 .btn-login:hover{
   color: #DD4A48;
   border: 1px solid #DD4A48;
@@ -43,14 +53,19 @@
   box-shadow: 1px 1px 5px #DD4A48;
 }
 
-.form-inputs {
-  color: #728F72;
-}
-
 .p-layout-form {
   color: #728F72;
+  text-align: center;
 }
 
 .p-layout-form a {
   color: #728F72;
+}
+
+.remember a {
+  color: #728F72;
+}
+
+.form-signin {
+  width: 400px;
 }
