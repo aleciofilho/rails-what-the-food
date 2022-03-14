@@ -7,8 +7,11 @@ class RecipesController < ApplicationController
     else
       # @recipes = Recipe.all
     end
-
   end
 
   def show; end
+
+  def create
+    @recipe = Recipe.new()
+  end
 end
