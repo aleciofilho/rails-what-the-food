@@ -1,25 +1,35 @@
 <div class="container">
-<h1>Profile</h1>
-<%= @user.name %>
-<%= @user.email %>
+  <h1>Profile</h1>
+  <%= @user.name %>
+  <%= @user.email %>
 
-<h2>My favorite recipes:</h2>
+  <h2>My favorite recipes:</h2>
 
-<!-- Podem mexer a vontade nos cards, eu só queria ver se as infos estavam todas certas -->
-<!-- style: _card.scss -->
-  <% @user.favorites.each do |favorite| %>
-  <div class="card-product my-2">
-    <img src="<%= favorite.recipe.image %>" />
-    <div class="card-product-infos">
-      <h2><%= favorite.recipe.name %></h2>
-      <p>"<%= sanitize favorite.recipe.description %>..."</p>
-      <div class="icons">
-        <p><%= favorite.recipe.likes %> <i class="fas fa-thumbs-up"></i></p>
-        <p><%= favorite.recipe.prep_time %> minutes</p>
-        <p>Serving <strong><%= favorite.recipe.likes %></strong> people</i></p>
+  <!-- Podem mexer a vontade nos cards, eu só queria ver se as infos estavam todas certas -->
+  <!-- style: _card.scss -->
+    <% unless current_user.favorites.count == 0 %>
+      <% current_user.favorites.each do |favorite| %>
+      <div class="card-product my-2">
+        <img src="<%= favorite.recipe.image %>" />
+        <div class="card-product-infos">
+          <h2><%= favorite.recipe.name %></h2>
+          <p>"<%= sanitize favorite.recipe.description %>..."</p>
+          <div class="icons">
+            <p><%= favorite.recipe.likes %> <i class="fas fa-thumbs-up"></i></p>
+            <p><%= favorite.recipe.prep_time %> minutes</p>
+            <p>Serving <strong><%= favorite.recipe.likes %></strong> people</i></p>
+          </div>
+          <div class="end-card">
+            <a href="<%=sanitize favorite.recipe.url %>">Go to website</a> |
+            <%= link_to "delete", favorite_path(favorite),
+                                  method: :delete,
+                                  data: { :confirm => 'Are you sure?'},
+                                  style: "color: red;" %>
+          </div>
+        </div>
       </div>
-      <a href="<%=sanitize favorite.recipe.url %>">Go to website</a>
-    </div>
-  </div>
-<% end %>
+      <% end %>
+    <% else %>
+      <p style="color: red;">You didn't add any recipes yet...</p>
+    <% end %>
 </div>
