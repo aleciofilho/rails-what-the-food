@@ -8,5 +8,9 @@ class PagesController < ApplicationController
   def index
     @categories = Category.all
     @ingredients = Ingredient.search_by_name(params[:query]) if params[:query].present?
+    @recipes = SpoonacularService.new.recipes(params[:ingredients]) if params[:ingredients]
+    puts 'VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV'
+    puts params[:ingredients]
+    puts '^^^^^^^^^^^^^^^^^^^^'
   end
 end

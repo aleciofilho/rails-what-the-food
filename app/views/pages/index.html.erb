@@ -37,16 +37,20 @@
             </div>
           </div>
         <% end %>
+<%#
+        <span class="btn btn-primary" data-action="click->display-recipes#buildQuery">
+          Search
+        </span> %>
 
-        <%= form_tag pages_path, class: "d-grid" do %>
-          <%= text_field_tag :query,
-              params[:query],
+        <%= form_tag pages_path, method: :get, class: "d-grid" do %>
+          <%= text_field_tag :ingredients,
+              params[:ingredients],
               class: "form-control",
               type: :hidden,
               data: { display_recipes_target: "input" }%>
-          <%= submit_tag "Search recipes", method: :get,
-                                          class: "btn btn-primary search-recipes",
-                                          data: { action: "submit->display-recipes#buildQuery" } %>
+          <%= submit_tag "Search recipes", class: "btn btn-primary search-recipes",
+                                          #  type: :button,
+                                           data: { action: "submit->display-recipes#buildQuery" } %>
         <% end %>
 
       </div>

@@ -14,7 +14,6 @@ export default class extends Controller {
   }
 
   buildQuery (event) {
-    event.preventDefault()
     let query = ""
     this.ingredientTargets.forEach(ingredient => {
       if (ingredient.classList.contains('active')) {
@@ -23,6 +22,8 @@ export default class extends Controller {
     query = query.slice(0, -2);
     console.log(query);
     this.inputTarget.value = query
+    console.log(inputTarget.value)
+    event.preventDefault()
   }
 
   // insertRecipes (input) {
