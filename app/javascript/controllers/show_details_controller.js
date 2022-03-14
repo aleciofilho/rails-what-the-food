@@ -10,7 +10,7 @@ export default class extends Controller {
     this.infoTarget.classList.remove('d-none');
     this.infoTarget.insertAdjacentHTML('beforeend',
       `
-      <p>${data.summary}</p>
+      <p>"${data.summary.substring(0, 280)}..."</p>
       <span>Pronto em ${data.readyInMinutes} minutos</span> |
       <span>Serve ${data.servings} pessoas</span><br>
       <a href="${data.sourceUrl}" target="_blank">Ir para o site</a>`);
