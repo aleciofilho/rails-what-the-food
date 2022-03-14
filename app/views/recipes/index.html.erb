@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Index of recipe</h1>
+  <h1>All recipes found</h1>
 
   <!--
    <%= form_tag recipes_path, method: :get, class: "d-flex" do %>
@@ -27,10 +27,15 @@
         <div class="card col-4 col-sm-8 m-1 fit-content" style="width: 18rem;" data-controller="show-details" data-show-details-target="card">
           <%= image_tag recipe['image'], class: "card-img-top" %>
           <div class="card-body ">
-            <a href="#" class="card-title" data-action="click->show-details#show"><%= recipe['title'] %></a>
-            <p class="card-text"><%= recipe['likes'] %></p>
-
+            <a href="#" class="card-title" data-action="click->show-details#show"><%= recipe['title'] %></a> |
             <span hidden data-show-details-target="id"><%= recipe['id'] %></span>
+
+            <%= link_to favorites_path(recipe: recipe), method: :post, remote: true do %>
+              <i class="fas fa-bookmark"></i>
+            <% end %>
+
+            <p class="card-text"><%= recipe['likes'] %> <i class="fas fa-thumbs-up"></i></p>
+
             <div class="more-info" data-show-details-target="info">
             </div>
           </div>
