@@ -28,10 +28,12 @@
           <%= image_tag recipe['image'], class: "card-img-top" %>
           <div class="card-body ">
             <a href="#" class="card-title" data-action="click->show-details#show"><%= recipe['title'] %></a> |
-            <%= link_to 'Favorite', recipe_path(recipe['id']) %>
+            <span hidden data-show-details-target="id"><%= recipe['id'] %></span>
+
+            <%= link_to 'Favorite', favorites_path(recipe: recipe), method: :post, remote: true %>
+
             <p class="card-text"><%= recipe['likes'] %></p>
 
-            <span hidden data-show-details-target="id"><%= recipe['id'] %></span>
             <div class="more-info" data-show-details-target="info">
             </div>
           </div>

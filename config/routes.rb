@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   end
 
   resources :recipes, only: %i[index show]
-  resources :favorites, only: %i[update]
+  resources :favorites, only: %i[create update]
 end
