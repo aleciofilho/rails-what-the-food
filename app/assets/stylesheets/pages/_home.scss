@@ -1,5 +1,287 @@
-// Specific CSS for your home-page
-.classe {
+.body{
+  background-color: white;
+}
+.container-home {
+  background-image: url("bg1.jpg");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  // background-clip: content-box;
+  height: 500px;
+  width: 100%;
+  background-color: white;
+}
+.text-banner {
+  padding: 150px 0 0 100px;
 
-    background-image: asset-url("foto.jpg");
+  h1{
+    color: #DD4A48;
+  }
+  p{
+    color: #DD4A48;
+  }
+}
+
+// -----------botton-----------
+.btn-home{
+  color: #728f72;
+  background-color: transparent;
+  border: 1px solid #728f72;
+  border-radius: 20px;
+}
+.btn-home:hover{
+  color: #DD4A48;
+  border: 1px solid #DD4A48;
+  transition: 0.6s;
+  box-shadow: 2px 3px 8px #DD4A48;
+}
+.btn-text {
+  display: inline-block;
+  margin: 0 auto;
+}
+.btn-cicle-text {
+  padding: 5px;
+  font-size: 13px;
+}
+
+//------------- cicles -------------
+
+.cicles-text {
+  h4 {
+    color: #DD4A48;
+  }
+}
+.container-cicles {
+  display: flex;
+  justify-content: space-between;
+}
+.link-cicles{
+  height: 700px;
+  padding: 70px 40px;
+  background-color: white;
+}
+.link-container {
+  width: 100%;
+  height: 150px;
+}
+.link-cicle-start {
+  border: 1px solid #728f72;
+  // border-width: 10px;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background-image: url("cook-peaple.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.link-cicle-start:hover {
+  border: 2px solid #DD4A48;
+  box-shadow: 1px 3px 6px #DD4A48;
+  transition: 0.4s;
+}
+.link-cicle-center {
+  border: 1px solid #728f72;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background-image: url("cookbook.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+.link-cicle-center:hover {
+  border: 2px solid #DD4A48;
+  box-shadow: 1px 3px 6px #DD4A48;
+  transition: 0.4s;
+}
+.link-cicle-end {
+  border: 1px solid #728f72;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  background-image: url("profile1.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.link-cicle-end:hover {
+  border: 2px solid #DD4A48;
+  box-shadow: 1px 3px 6px #DD4A48;
+  transition: 0.4s;
+}
+.cicles-text {
+  background-color: white;
+  margin: 0;
+  padding: 140px 0;
+    h2{
+      margin-bottom: 20px;
+      color: #728f72;
+    }
+}
+
+//------------- carousel -------------
+
+.carousel-home {
+  background-image: linear-gradient(to right, #ffffff93, #728f72b9);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 90px 70px;
+}
+.carousel-card {
+  width: 600px;
+  margin: 30px auto;
+}
+.carousel-text {
+  position: absolute;
+  top: 30px;
+  left: 155px;
+  width: 350px;
+}
+//------------- cards-carousel -------------
+
+.card-trip {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+.card-trip-bg {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("bg13.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+    h4 {
+      color: #ffffff;
+    }
+}
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 430px;
+  top: -100px;
+  width: 200px;
+  height: 200px;
+}
+
+.card-trip-infos {
+  width: 100%;
+}
+
+.card-infos-body{
+  h6{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 17px;
+  }
+}
+.btn-cards {
+  padding: 3px;
+}
+.btn-carousel {
+  color: #DD4A48;
+}
+
+//------------- About us -------------
+
+.banner {
+  background-size: cover;
+  background-position: right;
+  background-attachment: fixed;
+  padding: 80px 0;
+  background-image: url("bg7.jpg");
+  height: 550px;
+}
+
+.banner h2 {
+  margin: 0;
+  color: #728f72;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 37px;
+  font-weight: bold;
+}
+.banner h3 {
+  margin: 0;
+  color: #728f72;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 17px;
+  color: white;
+  // opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.container-aboutus {
+  width: 380px;
+  margin: 60px 0 15px 80px;
+  h2, p{
+    color: #DD4A48;
+  }
+}
+
+//------------- Footer -------------
+
+.footer {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 130px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: #DD4A48;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  color: #728f72;
+}
+.footer .fa-heart {
+  color: #DD4A48;
+}
+.footer-copyright p {
+  color: #DD4A48;
+}
+.logo-footer {
+  background-image: url("logo10.png");
+  background-position: center;
+  background-size: cover;
+  width: 200px;
+  height: 120px;
 }
