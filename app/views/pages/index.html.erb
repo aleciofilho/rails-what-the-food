@@ -1,4 +1,4 @@
-<div class="container page-container">
+<div class="page-container">
   <div class="row" data-controller="display-recipes">
     <div class="col-3 sidebar-ingredients">
       <div class="pantry-header">
@@ -29,7 +29,7 @@
               <h2><%= category.name %></h2>
             </div>
             <div class="card-body">
-              <% category.ingredients.first(5).each do |i|%>
+              <% category.ingredients.first(10).each do |i|%>
                 <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient" data-action="click->display-recipes#activate">
                   <%= i.name %>
                 </span>
