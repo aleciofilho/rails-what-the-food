@@ -10,7 +10,7 @@ export default class extends Controller {
     this.infoTarget.classList.remove('d-none');
     this.infoTarget.insertAdjacentHTML('beforeend',
       `
-      <p>${data.summary}</p>
+      <p>"${data.summary.substring(0, 280)}..."</p>
       <span>Pronto em ${data.readyInMinutes} minutos</span> |
       <span>Serve ${data.servings} pessoas</span><br>
       <a href="${data.sourceUrl}" target="_blank">Ir para o site</a>`);
@@ -18,7 +18,7 @@ export default class extends Controller {
 
   fetchRecipe(id) {
     console.log(id);
-    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=eb83e47907a244ab86a9aeccc94ca035&includeNutrition=false`
+    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=8e744ecd647445a089bee564ac8bcd73&includeNutrition=false`
     fetch(url)
       .then(response => response.json())
       .then((data) => {
