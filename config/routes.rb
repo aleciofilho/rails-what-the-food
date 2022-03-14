@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  resources :pages, only: :index
+
   resources :categories, only: %i[index] do
     resources :ingredients, only: %i[index]
   end
