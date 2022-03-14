@@ -1,56 +1,157 @@
-<div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <%= current_user.email if user_signed_in? %>
-  <% if user_signed_in? %>
-    <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to 'login', user_session_path %>
-  <% end %>
+<div class="container-home">
 
+<%# ------------- Banner ------------- %>
 
-
-
-
-
-
-
- <% @categories.each do |category| %>
-  <div class="card">
-    <div class="card-header">
-      <h2><%= category.name %></h2>
+    <div class="text-banner col-6">
+      <h1>What The Food - Find your recipe</h1>
+      <p>We'll find the perfect recipe for the ingredients you have!</p>
+      <%# <% link_to index do%>
+        <button class="btn btn-home">Find your recipe</button>
+      <%# <% end %>
     </div>
-    <div class="card-body">
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+</div>
+
+<%# ------------- Cicles ------------- %>
+
+  <div class="container-cicles">
+    <div class="row">
+      <div class="link-cicles col-6">
+        <div class="link-container row justify-content-end align-items-center ">
+          <%# <% link_to "#" do %>
+            <div class=" col-4">
+              <a href="#">
+                <div class="link-cicle-start"></div>
+              </a>
+            </div>
+          <%# <% end %>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <% category.ingredients.first(10).each do |i|%>
-              <div>
-                <span class="btn btn-primary"><%= i.name %></span>
-              </div>
-            <%end%>
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="..." class="d-block w-100" alt="...">
-          </div>
+        <div class="link-container row justify-content-center">
+          <%# <% link_to "#" do %>
+            <div class="col-6">
+              <a href="#">
+                <div class="link-cicle link-cicle-center"></div>
+              </a>
+            </div>
+          <%# <% end %>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <div class="link-container row justify-content-end align-items-end">
+          <%# <% link_to "#" do %>
+            <div class=" col-4">
+              <a href="#">
+                <div class="link-cicle-end"></div>
+              </a>
+            </div>
+          <%# <% end %>
+        </div>
+      </div>
+      <div class="cicles-text col-6">
+        <h2>Discover the three categories of What the food</h2>
+
+        <p>At What The Food you will find three categories, the ingredients category, where you select the ingredients you have and we look for a recipe that's ideal for you! <button class="btn btn-home btn-cicle-text">Find your recipe</button></p>
+        <p>You will also find here a social network of cooks from all over the world. where you can exchange recipes and bookmark your favorites <button class="btn btn-home btn-cicle-text">Social network</button></p>
+        <p>And finally an incredible profile where you will have all your favorite recipes, the most used ingredients and your recipe history <button class="btn btn-home btn-cicle-text">My profile</button></p>
+        <div class="d-flex justify-content-center mt-4">
+          <h4>Enjoy!</h4>
+        </div>
       </div>
     </div>
   </div>
-<% end %>
+
+<%# ------------- carousel ------------- %>
+
+<div id="carouselExampleCaptions" class="carousel slide carousel-home" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner carousel-card">
+    <div class="carousel-item active">
+      <div class="card-trip">
+        <%= image_tag "bg16" %>
+        <div class="card-trip-infos d-flex justify-content-center">
+          <div>
+            <h2>Ricardo</h2>
+            <p>Estudante, cozinheiro de primeira viagem</p>
+          </div>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+      <div class="carousel-caption d-none d-md-block carousel-text">
+        <h5>Incredible experience</h5>
+        <p>My experience could not have been better with What the Food</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card-trip">
+         <%= image_tag "bg16" %>
+        <div class="card-trip-infos d-flex justify-content-center">
+          <div>
+            <h2>Leandro</h2>
+            <p>Estudante, cozinheiro de primeira viagem</p>
+          </div>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+      <div class="carousel-caption d-none d-md-block carousel-text">
+        <h5>Incredible experience</h5>
+        <p>My experience could not have been better with What the Food</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card-trip">
+         <%= image_tag "bg16" %>
+        <div class="card-trip-infos d-flex justify-content-center">
+          <div class="">
+            <h2>Julio</h2>
+            <p>Estudante, cozinheiro de primeira viagem</p>
+          </div>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+      <div class="carousel-caption d-none d-md-block carousel-text">
+        <h5>Incredible experience</h5>
+        <p>My experience could not have been better with What the Food</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<%# ------------- About Us ------------- %>
+
+<div class="banner">
+  <div class="container-aboutus">
+    <h2>About us</h2><br>
+    <h3>Le Wagon students <strong>passionate</strong> about programming and ideas <strong>change the world</strong>!</h3><br>
+    <p>We are students driven by curiosity and the desire to apply our ideas to the world. This is our first project, developed with a lot of passion and dedication to reach you</p>
+  </div>
+</div>
+
+
+<%# ------------- Footer ------------- %>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="logo-footer">
+  </div>
+  <div class="footer-copyright">
+   <p>What The Food - <i class="fas fa-heart"></i> Find your recipe</p>
+  </div>
+</div>
