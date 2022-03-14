@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["id", "info", "card", "favorite"]
+  static targets = ["id", "info", "card"]
 
   connect() {
   }
@@ -29,12 +29,7 @@ export default class extends Controller {
   show(event) {
     event.preventDefault();
     this.infoTarget.innerHTML = '';
-    this.infoTarget.insertAdjacentHTML('beforeend', `
-    <a href="recipe" class="d-none" data-show-details-target="favorite">
-      <i class="fas fa-bookmark"></i>
-    </a>`);
     this.infoTarget.classList.add('d-none');
-    this.favoriteTarget.classList.remove('d-none');
     this.fetchRecipe(this.idTarget.innerText);
   }
 }

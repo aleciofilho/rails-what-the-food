@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :recipes, through: :favorites
+  has_many :favorites
   validates :name, :email, presence: true
 end

@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :ingredients, only: %i[index]
   end
 
-  resources :recipes, only: %i[index show create]
+  resources :recipes, only: %i[index show]
+  resources :favorites, only: %i[update]
 end
