@@ -33,7 +33,7 @@
   color: #DD4A48;
   border: 1px solid #DD4A48;
   transition: 0.6s;
-  box-shadow: 1px 1px 5px #DD4A48;
+  box-shadow: 2px 3px 8px #DD4A48;
 }
 .btn-text {
   display: inline-block;
@@ -128,7 +128,7 @@
   background-image: linear-gradient(to right, #ffffff93, #728f72b9);
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 70px;
+  padding: 90px 70px;
 }
 .carousel-card {
   width: 600px;
@@ -212,16 +212,18 @@
 
 .banner {
   background-size: cover;
-  background-position: center;
+  background-position: right;
+  background-attachment: fixed;
   padding: 80px 0;
-  background-image: url("abouts3.png");
+  background-image: url("bg7.jpg");
+  height: 550px;
 }
 
 .banner h2 {
   margin: 0;
-  color: white;
+  color: #728f72;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 27px;
+  font-size: 37px;
   font-weight: bold;
 }
 .banner h3 {
@@ -235,12 +237,12 @@
 .banner p {
   font-size: 17px;
   color: white;
-  opacity: .7;
+  // opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 .container-aboutus {
-  width: 400px;
-  margin-left: 70px;
+  width: 380px;
+  margin: 60px 0 15px 80px;
   h2, p{
     color: #DD4A48;
   }
@@ -253,7 +255,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 170px;
+  height: 130px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
@@ -263,7 +265,6 @@
 }
 .footer-links a {
   color: #DD4A48;
-  // opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -278,7 +279,7 @@
   color: #DD4A48;
 }
 .logo-footer {
-  background-image: url("logo3.png");
+  background-image: url("logo10.png");
   background-position: center;
   background-size: cover;
   width: 200px;
