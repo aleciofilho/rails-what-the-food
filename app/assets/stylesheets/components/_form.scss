@@ -56,7 +56,8 @@
 .p-layout-form {
   color: #728F72;
   text-align: center;
-  font-size: 10px;
+  font-size: 14px;
+  padding-bottom: 10px;
 }
 
 .p-layout-form a {
@@ -69,4 +70,13 @@
 
 .form-signin {
   width: 400px;
+}
+
+.password-change {
+  text-align: center;
+}
+
+.instructions {
+  text-align: center;
+  color:rgb(221, 74, 72);
 }
