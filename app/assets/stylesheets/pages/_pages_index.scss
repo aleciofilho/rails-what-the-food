@@ -4,10 +4,50 @@
 
 .sidebar-ingredients {
   position: relative;
+  width: 400px;
+  padding: 0;
+}
+// .form-control-ingredients {
+
+//     input:focus, input:active {
+//       box-shadow: 1px 1px 5px rgba(235, 222, 222, 0.1);
+//       /* border-color: none; */
+//       outline: #728F72 auto 5px !important;
+//       background-color: rgb(255, 255, 255);
+//     }
+// }
+
+
+// ---------Button--------
+
+.btn-header-ingredients {
+  margin-left: 10px;
+  color: #728f72;
+  background-color: transparent;
+  border: 1px solid #728f72;
+  border-radius: 8px;
+}
+.btn-header-ingredients:hover {
+  color: #DD4A48;
+  border: 1px solid #DD4A48;
+  transition: 0.5s;
+  box-shadow: 2px 3px 8px #DD4A48;
+}
+.btn-ingredients {
+  margin-left: 10px;
+  color: #728f72;
+  background-color: transparent;
+  border: 1px solid #728f72;
+  border-radius: 10px;
+}
+.btn-ingredients:hover {
+  color: white !important;
+  background-color: #DD4A48 !important;
+  border: 1px solid #DD4A48 !important;
 }
 
 .pantry-header {
-  height: 120px;
+  height: 100px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -15,14 +55,24 @@
   background-color: rgb(255, 255, 255);
   h2 {
     font-size: 1.25rem;
+    color: #DD4A48;
+    text-shadow: 1px 1px 3px rgba(150, 122, 122, 0.2);
+    font-weight: bold;
   }
+}
+.pantry-search-bar {
+  // background-color: red;
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
 }
 
 .categories-container {
-  height: 70vh;
+  height: 65vh;
   overflow-y: scroll;
   padding: 10px;
-  background-color: rgb(235, 232, 227);
+  background-color: #C0D8C0;
+  border-radius: 5px;
   // display: flex;
   // flex-direction: column;
   // align-items: center;
@@ -34,13 +84,18 @@
   // width: 90vw;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 
   .card-category-header {
     background-color: white;
     border-bottom: 1px solid rgba(0,0,0,0.2);
+    height: 100px;
 
     h2 {
       font-size: 1rem;
+      color: white;
+      text-shadow: 1px 1px 3px rgb(104, 97, 97);
+      font-weight: bold;
     }
   }
 
@@ -51,4 +106,20 @@
     bottom: 0;
     width: 100%;
   }
+}
+.back {
+  background-image: linear-gradient(rgba(128, 124, 124, 0.4),rgba(85, 85, 85, 0.4)), url("bg7.jpg");
+  background-size: cover;
+}
+
+
+// ---------carousel--------
+
+
+.teste{
+  background-image: url("bg16.jpg");
+  background-position: center;
+  background-size: cover;
+
+  // background-color: red;
 }

@@ -1,16 +1,16 @@
-<div class="page-container">
-  <div class="row" data-controller="display-recipes">
-    <div class="col-3 sidebar-ingredients">
+<div class="page-container row">
+  <div class="row col-4" data-controller="display-recipes">
+    <div class=" sidebar-ingredients col-4">
       <div class="pantry-header">
         <h2> Ingredients</h2>
 
         <%= form_tag pages_path, method: :get, class: "d-flex pantry-search-bar" do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control form-control-ingredients",
             placeholder: "add/remove ingredients"
           %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <%= submit_tag "Search", class: "btn-header-ingredients btn" %>
         <% end %>
 
         <% if @ingredients %>
@@ -22,15 +22,20 @@
         <% end %>
       </div>
 
+        <%# -------------Categories------------- %>
+
       <div class="categories-container pb-0">
         <% @categories.each do |category| %>
-          <div class="card-category mb-2 p-1">
-            <div class="card-category-header">
+          <div class="card-category mb-3 p-1">
+
+            <div class="card-category-header back d-flex justify-content-center align-items-center ">
+
               <h2><%= category.name %></h2>
+
             </div>
             <div class="card-body">
               <% category.ingredients.first(10).each do |i|%>
-                <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient" data-action="click->display-recipes#activate">
+                <span class="btn btn-ingredients btn-outline-success btn-sm mb-1" data-display-recipes-target="ingredient" data-action="click->display-recipes#activate">
                   <%= i.name %>
                 </span>
               <%end%>
@@ -39,14 +44,17 @@
         <% end %>
       </div>
 
-      <%= form_tag pages_path, method: :get, class: "d-grid search-recipes", data: { action: "submit->display-recipes#buildQuery", display_recipes_target: "form" }, remote: true  do %>
-        <%= text_field_tag :ingredients,
-            params[:ingredients],
-            class: "form-control",
-            type: :hidden,
-            data: { display_recipes_target: "input" }%>
-        <%= submit_tag "Search recipes", class: "btn btn-primary" %>
+      <div class="search-recipes m-3">
+        <%= form_tag pages_path, method: :get, class: "d-grid search-recipes", data: { action: "submit->display-recipes#buildQuery", display_recipes_target: "form" }, remote: true  do %>
+          <%= text_field_tag :ingredients,
+              params[:ingredients],
+              class: "form-control",
+              type: :hidden,
+              data: { display_recipes_target: "input" }%>
+          <%= submit_tag "Search recipes", class: "btn btn-primary" %>
       <% end %>
+      </div>
+
 
 
 
@@ -72,5 +80,13 @@
         </div>
       </div>
     </div>
+
+
   </div>
+    <div class="teste col-8">
+
+    </div>
 </div>
+
+
+<%# -------------Categories------------- %>
