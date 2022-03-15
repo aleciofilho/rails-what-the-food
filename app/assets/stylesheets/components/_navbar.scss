@@ -20,12 +20,20 @@ li {
   justify-content: space-around;
   margin: 0 100px;
 }
-.nav-item a{
+.nav-link{
   color: #728f72;
 }
-
-.nav-item a:hover{
+.nav-link:hover{
+  color: white !important;
+  transition: 0.7s;
+}
+.nav-link-login {
+  color: #728f72;
+  margin-right: 10px;
+}
+.nav-link-login:hover {
   color: #DD4A48;
+  transition: 0.8s;
 }
 .btn-navbar{
   color: #728f72;
@@ -38,13 +46,17 @@ li {
 }
 
 .btn-navbar:hover {
-  border: 1px solid #DD4A48;
+  border: 1px solid white;
+  background-color: #e08281;
+  transition: 0.5s;
 }
-.btn-navbar a {
-  color: #728f72;
-}
-
 .btn-navbar a:hover {
-  color: #DD4A48;
+  color: white;
+}
+.logo-list {
+  width: 800px;
 }
 
+.logo-nav-bar {
+  margin-right: 10px;
+}
