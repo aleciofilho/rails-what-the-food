@@ -22,28 +22,6 @@
   }
 }
 
-// -----------botton-----------
-.btn-home{
-  color: #728f72;
-  background-color: transparent;
-  border: 1px solid #728f72;
-  border-radius: 20px;
-}
-.btn-home:hover{
-  color: #DD4A48;
-  border: 1px solid #DD4A48;
-  transition: 0.6s;
-  box-shadow: 2px 3px 8px #DD4A48;
-}
-.btn-text {
-  display: inline-block;
-  margin: 0 auto;
-}
-.btn-cicle-text {
-  padding: 5px;
-  font-size: 13px;
-}
-
 //------------- cicles -------------
 
 .cicles-text {
@@ -53,7 +31,6 @@
 }
 .container-cicles {
   display: flex;
-  justify-content: space-between;
 }
 .link-cicles{
   height: 700px;
@@ -83,8 +60,6 @@
 .link-cicle-center {
   border: 1px solid #728f72;
   border-radius: 100%;
-  width: 100px;
-  height: 100px;
   background-image: url("cookbook.jpg");
   background-position: center;
   background-size: cover;
@@ -115,7 +90,7 @@
 .cicles-text {
   background-color: white;
   margin: 0;
-  padding: 140px 0;
+  padding: 140px 30px;
     h2{
       margin-bottom: 20px;
       color: #728f72;
@@ -182,7 +157,7 @@
   position: relative;
 }
 
-.card-trip-infos .card-trip-user {
+.card-trip-user {
   position: absolute;
   right: 430px;
   top: -100px;
@@ -192,6 +167,7 @@
 
 .card-trip-infos {
   width: 100%;
+
 }
 
 .card-infos-body{
@@ -200,12 +176,6 @@
     margin-right: 5px;
     font-size: 17px;
   }
-}
-.btn-cards {
-  padding: 3px;
-}
-.btn-carousel {
-  color: #DD4A48;
 }
 
 //------------- About us -------------
@@ -247,41 +217,3 @@
     color: #DD4A48;
   }
 }
-
-//------------- Footer -------------
-
-// .footer {
-//   background: #ffffff;
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   height: 130px;
-//   padding: 0px 50px;
-//   color: rgba(0,0,0,0.3);
-// }
-// .footer-links {
-//   display: flex;
-//   align-items: center;
-// }
-// .footer-links a {
-//   color: #DD4A48;
-//   text-decoration: none;
-//   font-size: 24px;
-//   padding: 0px 10px;
-// }
-// .footer-links a:hover {
-//   color: #728f72;
-// }
-// .footer .fa-heart {
-//   color: #DD4A48;
-// }
-// .footer-copyright p {
-//   color: #DD4A48;
-// }
-// .logo-footer {
-//   background-image: url("logo10.png");
-//   background-position: center;
-//   background-size: cover;
-//   width: 200px;
-//   height: 120px;
-// }
