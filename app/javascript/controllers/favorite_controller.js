@@ -10,10 +10,12 @@ export default class extends Controller {
     event.preventDefault();
     const p = event.currentTarget.parentNode;
     if (p.classList.contains('saved')){
-      this.duplicateTarget.classList.toggle('d-none');
+      this.duplicateTarget.classList.remove('d-none');
+      setTimeout(() => { this.duplicateTarget.classList.add('d-none'); }, 3000);
     }else {
-      this.alertTarget.classList.toggle('d-none');
+      this.alertTarget.classList.remove('d-none');
       p.classList.add('saved');
+      setTimeout(() => { this.alertTarget.classList.add('d-none'); }, 3000);
     }
   }
 
