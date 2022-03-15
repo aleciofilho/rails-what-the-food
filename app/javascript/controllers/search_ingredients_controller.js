@@ -1,23 +1,32 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["submit", "form", "input", "ingredients", "button"]
+  static targets = ["submit", "form", "input", "ingredients", "ingredient", "button"]
 
   connect() {
     console.log("searchbar controller connected")
   }
 
-  search (event) {
-    event.preventDefault()
-    callRails(this.inputTarget.innerText)
-    this.formTarget.reset();
-  }
+  // search () {
+    //   this.ingredientsTarget.classList.toggle('d-none')
+    // }
 
-  // callRails () {
-  //   fetch(endereço relativo da action)
-  //   .then(pegar @ingredients)
-  //   .then(data => buildHTML(data))
-  // }
+    fetchData (url) {
+      fetch(url, { headers: { "Accept": "text/plain" } })
+      .then(response => response.text())
+      .then((data) => {
+      this.ingredientsTarget.outerHTML = data
+      })
+    // .then(pegar @ingredients)
+    // .then(data => buildHTML(data))
+    }
+
+    search (event) {
+      event.preventDefault()
+      const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
+      this.fetchData(url)
+      this.formTarget.reset();
+    }
 
   // buildHTML (data) {
   //   data.forEach ((element) => {
@@ -28,6 +37,12 @@ export default class extends Controller {
 
   activate (event) {
     event.currentTarget.classList.toggle('active')
+    this.ingredientTargets.forEach ((ingredient) => {
+      if (ingredient.innerText === event.currentTarget.innerText) {
+        ingredient.classList.toggle('active')
+      }
+    })
+    this.ingredientsTarget.classList.toggle('d-none')
   }
 
 }

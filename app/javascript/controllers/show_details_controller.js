@@ -17,7 +17,7 @@ export default class extends Controller {
 
   fetchRecipe(id) {
     console.log(id);
-    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=8e744ecd647445a089bee564ac8bcd73&includeNutrition=false`
+    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=22b62d5750be4e5ebd66bbcb23d25b52&includeNutrition=false`
     fetch(url)
       .then(response => response.json())
       .then((data) => {

@@ -4,7 +4,7 @@
       <div class="pantry-header">
         <h2> Ingredients</h2>
 
-        <%= form_tag pages_path, method: :get, class: "d-flex pantry-search-bar", data: { action: "submit->search-ingredients#search", search_ingredients_target: "form" } do %>
+        <%= form_tag pages_path, method: :get, class: "d-flex pantry-search-bar", data: { action: "submit->search-ingredients#search", search_ingredients_target: "form" }, remote: true do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
@@ -12,14 +12,6 @@
             placeholder: "add/remove ingredients"
           %>
           <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
-
-        <% if @ingredients %>
-          <div class="d-flex searched-ingredients">
-            <% @ingredients.each do |i| %>
-              <span class="btn btn-outline-primary btn-sm mb-1" data-action="click->search-ingredients#activate"><%= i.name %></span>
-            <% end %>
-          </div>
         <% end %>
 
         <div class="searched-ingredients" data-search-ingredients-target="ingredients">
@@ -35,7 +27,7 @@
             </div>
             <div class="card-body">
               <% category.ingredients.first(10).each do |i|%>
-                <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient" data-action="click->display-recipes#activate">
+                <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient" data-search-ingredients-target="ingredient" data-action="click->display-recipes#activate">
                   <%= i.name %>
                 </span>
               <%end%>
