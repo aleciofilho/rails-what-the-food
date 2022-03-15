@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
+
   def index
     @spoonacular = SpoonacularService.new
     @recipes = @spoonacular.recipes(params[:ingredients].sub(/[, ]+/, ',+')) if params[:ingredients]
