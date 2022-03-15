@@ -1,6 +1,6 @@
 <div class="page-container row">
-  <div class="row col-4" data-controller="display-recipes">
-    <div class="col-4 sidebar-ingredients" data-controller="search-ingredients">
+  <div class="col-4" data-controller="display-recipes">
+    <div class=" sidebar-ingredients" data-controller="search-ingredients">
       <div class="pantry-header">
         <h2> Ingredients</h2>
 
@@ -48,7 +48,7 @@
               class: "form-control",
               type: :hidden,
               data: { display_recipes_target: "input" }%>
-          <%= submit_tag "Search recipes", class: "btn btn-primary" %>
+          <%= submit_tag "Search recipes", class: "btn btn-footer-ingredients" %>
       <% end %>
       </div>
 
