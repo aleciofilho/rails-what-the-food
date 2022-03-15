@@ -23,10 +23,17 @@ li {
 .nav-link{
   color: #728f72;
 }
-
 .nav-link:hover{
   color: white !important;
   transition: 0.7s;
+}
+.nav-link-login {
+  color: #728f72;
+  margin-right: 10px;
+}
+.nav-link-login:hover {
+  color: #DD4A48;
+  transition: 0.8s;
 }
 .btn-navbar{
   color: #728f72;
