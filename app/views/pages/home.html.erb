@@ -1,13 +1,12 @@
-<div class="container-home">
-
 <%# ------------- Banner ------------- %>
 
+<div class="container-home">
     <div class="text-banner col-6">
       <h1>What The Food - Find your recipe</h1>
       <p>We'll find the perfect recipe for the ingredients you have!</p>
-      <%# <% link_to index do%>
+      <%= link_to categories_path do %>
         <button class="btn btn-home">Find your recipe</button>
-      <%# <% end %>
+      <% end %>
     </div>
 
 </div>
@@ -15,7 +14,7 @@
 <%# ------------- Cicles ------------- %>
 
   <div class="container-cicles">
-    <div class="row">
+
       <div class="link-cicles col-6">
         <div class="link-container row justify-content-end align-items-center ">
           <%# <% link_to "#" do %>
@@ -55,7 +54,7 @@
           <h4>Enjoy!</h4>
         </div>
       </div>
-    </div>
+
   </div>
 
 <%# ------------- carousel ------------- %>
@@ -106,10 +105,10 @@
          <%= image_tag "bg16" %>
         <div class="card-trip-infos d-flex justify-content-center">
           <div class="">
-            <h2>Julio</h2>
-            <p>Estudante, cozinheiro de primeira viagem</p>
+            <h2>Julia</h2>
+            <p>Estudante, cozinheira de primeira viagem huahauhahuau huahuahua huahauhuah</p>
           </div>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <%= image_tag "person1.jpeg", class: "card-trip-user avatar-bordered"  %>
         </div>
       </div>
       <div class="carousel-caption d-none d-md-block carousel-text">
@@ -137,21 +136,3 @@
     <p>We are students driven by curiosity and the desire to apply our ideas to the world. This is our first project, developed with a lot of passion and dedication to reach you</p>
   </div>
 </div>
-
-
-<%# ------------- Footer ------------- %>
-
-<%# <div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="logo-footer">
-  </div>
-  <div class="footer-copyright">
-   <p>What The Food - <i class="fas fa-heart"></i> Find your recipe</p>
-  </div>
-</div> %>
