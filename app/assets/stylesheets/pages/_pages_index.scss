@@ -59,6 +59,12 @@
     text-shadow: 1px 1px 3px rgba(150, 122, 122, 0.2);
     font-weight: bold;
   }
+
+  .searched-ingredients {
+    z-index: 2;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 }
 .pantry-search-bar {
   // background-color: red;

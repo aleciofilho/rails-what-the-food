@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  
+  static targets = ["ingredient", "input", "recipes", "form"]
 
   connect() {
     console.log("Controller connected");
@@ -28,7 +28,7 @@ export default class extends Controller {
   }
 
   fetchRecipes (query) {
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=22b62d5750be4e5ebd66bbcb23d25b52&ingredients=${query}&number=10`)
+    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=eb83e47907a244ab86a9aeccc94ca035&ingredients=${query}&number=10`)
     .then(response => response.json())
     .then(data => this.insertRecipes(data))
   }
@@ -42,7 +42,7 @@ export default class extends Controller {
             <a href="#" class="card-title" data-action="click->show-details#show">${element.title}</a>
             <p class="card-text">${element.likes}</p>
             <span hidden data-show-details-target="id">${element.id}</span>
-            <div class="more-info" data-show-details-target="info">
+            <div class="more-info d-none" data-show-details-target="info">
             </div>
           </div>
         </div>`
