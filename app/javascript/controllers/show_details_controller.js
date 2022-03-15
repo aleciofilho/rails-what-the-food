@@ -7,7 +7,6 @@ export default class extends Controller {
   }
 
   insertDetails(data) {
-    this.infoTarget.classList.remove('d-none');
     this.infoTarget.insertAdjacentHTML('beforeend',
       `
       <p>"${data.summary.substring(0, 280)}..."</p>
@@ -29,7 +28,10 @@ export default class extends Controller {
   show(event) {
     event.preventDefault();
     this.infoTarget.innerHTML = '';
-    this.infoTarget.classList.add('d-none');
-    this.fetchRecipe(this.idTarget.innerText);
+    // this.infoTarget.classList.add('d-none');
+    if (this.infoTarget.classList.contains('d-none')) {
+      this.fetchRecipe(this.idTarget.innerText);
+    }
+    this.infoTarget.classList.toggle('d-none');
   }
 }

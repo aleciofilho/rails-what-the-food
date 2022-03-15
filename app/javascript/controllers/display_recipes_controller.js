@@ -42,7 +42,7 @@ export default class extends Controller {
             <a href="#" class="card-title" data-action="click->show-details#show">${element.title}</a>
             <p class="card-text">${element.likes}</p>
             <span hidden data-show-details-target="id">${element.id}</span>
-            <div class="more-info" data-show-details-target="info">
+            <div class="more-info d-none" data-show-details-target="info">
             </div>
           </div>
         </div>`
