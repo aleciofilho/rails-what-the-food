@@ -7,7 +7,6 @@ export default class extends Controller {
   }
 
   insertDetails(data) {
-    this.infoTarget.classList.remove('d-none');
     this.infoTarget.insertAdjacentHTML('beforeend',
       `
       <p>"${data.summary.substring(0, 280)}..."</p>
@@ -18,7 +17,7 @@ export default class extends Controller {
 
   fetchRecipe(id) {
     console.log(id);
-    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=8e744ecd647445a089bee564ac8bcd73&includeNutrition=false`
+    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=22b62d5750be4e5ebd66bbcb23d25b52&includeNutrition=false`
     fetch(url)
       .then(response => response.json())
       .then((data) => {
@@ -29,7 +28,10 @@ export default class extends Controller {
   show(event) {
     event.preventDefault();
     this.infoTarget.innerHTML = '';
-    this.infoTarget.classList.add('d-none');
-    this.fetchRecipe(this.idTarget.innerText);
+    // this.infoTarget.classList.add('d-none');
+    if (this.infoTarget.classList.contains('d-none')) {
+      this.fetchRecipe(this.idTarget.innerText);
+    }
+    this.infoTarget.classList.toggle('d-none');
   }
 }
