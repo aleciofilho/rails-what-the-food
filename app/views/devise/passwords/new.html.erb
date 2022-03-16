@@ -8,7 +8,7 @@
           <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
             <%= f.error_notification %>
 
-            <div class="form-inputs password">
+            <div class="form-inputs password-change">
               <%= f.input :email,
                           required: true,
                           autofocus: true,

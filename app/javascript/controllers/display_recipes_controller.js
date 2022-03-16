@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  
+  static targets = ["ingredient", "input", "recipes", "form"]
 
   connect() {
     console.log("Controller connected");
@@ -22,33 +22,74 @@ export default class extends Controller {
         query += `${ingredient.innerText},+`;
       }})
     query = query.slice(0, -2);
-    this.inputTarget.value = query
-    this.fetchRecipes(query)
+    // this.inputTarget.value = query
+    this.fetchRails(query)
     this.formTarget.reset();
   }
 
-  fetchRecipes (query) {
-    fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=22b62d5750be4e5ebd66bbcb23d25b52&ingredients=${query}&number=10`)
-    .then(response => response.json())
-    .then(data => this.insertRecipes(data))
-  }
+  // fetchRecipes (query) {
+  //   fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=eb83e47907a244ab86a9aeccc94ca035&ingredients=${query}&number=10`)
+  //   .then(response => response.json())
+  //   .then(data => this.insertRecipes(data))
+  // }
 
-  insertRecipes (data) {
-    data.forEach ((element) => {
-        const card =
-        `<div class="card col-4 col-sm-8 m-1 fit-content" style="width: 18rem;" data-controller="show-details" data-show-details-target="card">
-          <img src=${element.image} class= "card-img-top">
-          <div class="card-body ">
-            <a href="#" class="card-title" data-action="click->show-details#show">${element.title}</a>
-            <p class="card-text">${element.likes}</p>
-            <span hidden data-show-details-target="id">${element.id}</span>
-            <div class="more-info" data-show-details-target="info">
-            </div>
-          </div>
-        </div>`
-        this.recipesTarget.insertAdjacentHTML("beforeend", card)
+  fetchRails (query) {
+    fetch(`${this.formTarget.action}?ingredients=${query}`, { headers: { accept: "text/plain" }})
+    .then(response => response.text())
+    .then((data) => {
+      this.recipesTarget.innerHTML = data
     })
   }
+
+  // from stackoverflow
+
+  // export default class extends Controller {
+  //   static targets = [ 'filt' ];
+  //   connect() {
+  //     fetch('/recipes', { headers: { accept: "application/json" } })
+  //       .then(response => response.json())
+  //       .then((data) => {
+  //         data.recipes.forEach((rec) => {
+  //           const a = rec.ingredients;
+  //           .......
+
+
+  // from search_ingredients_controller
+
+  // fetchData (url) {
+  //   fetch(url, { headers: { "Accept": "text/plain" } })
+  //   .then(response => response.text())
+  //   .then((data) => {
+  //   this.ingredientsTarget.outerHTML = data
+  //   })
+  // // .then(pegar @ingredients)
+  // // .then(data => buildHTML(data))
+  // }
+
+  // search (event) {
+  //   event.preventDefault()
+  //   const url = `${this.formTarget.action}?query=${this.inputTarget.value}`
+  //   this.fetchData(url)
+  //   this.formTarget.reset();
+  // }
+
+
+  // insertRecipes (data) {
+  //   data.forEach ((element) => {
+  //       const card =
+  //       `<div class="card col-4 col-sm-8 m-1 fit-content" style="width: 18rem;" data-controller="show-details" data-show-details-target="card">
+  //         <img src=${element.image} class= "card-img-top">
+  //         <div class="card-body ">
+  //           <a href="#" class="card-title" data-action="click->show-details#show">${element.title}</a>
+  //           <p class="card-text">${element.likes}</p>
+  //           <span hidden data-show-details-target="id">${element.id}</span>
+  //           <div class="more-info d-none" data-show-details-target="info">
+  //           </div>
+  //         </div>
+  //       </div>`
+  //       this.recipesTarget.insertAdjacentHTML("beforeend", card)
+  //   })
+  // }
 
   // insertRecipes (input) {
   //   this.displayTarget.classList.remove('d-none');

@@ -1,25 +1,22 @@
 <div class="page-container">
   <div class="row" data-controller="display-recipes">
-    <div class="col-3 sidebar-ingredients">
+    <div class="col-3 sidebar-ingredients" data-controller="search-ingredients">
       <div class="pantry-header">
         <h2> Ingredients</h2>
 
-        <%= form_tag pages_path, method: :get, class: "d-flex pantry-search-bar" do %>
+        <%= form_tag pages_path, method: :get, class: "d-flex pantry-search-bar", data: { action: "submit->search-ingredients#search", search_ingredients_target: "form" }, remote: true do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
+            data: { search_ingredients_target: "input" },
             placeholder: "add/remove ingredients"
           %>
           <%= submit_tag "Search", class: "btn btn-primary" %>
         <% end %>
 
-        <% if @ingredients %>
-          <div class="d-flex searched-ingredients">
-            <% @ingredients.each do |i| %>
-              <span class="btn btn-primary"><%= i.name %></span>
-            <% end %>
-          </div>
-        <% end %>
+        <div class="searched-ingredients" data-search-ingredients-target="ingredients">
+        </div>
+
       </div>
 
       <div class="categories-container pb-0">
@@ -30,7 +27,7 @@
             </div>
             <div class="card-body">
               <% category.ingredients.first(10).each do |i|%>
-                <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient" data-action="click->display-recipes#activate">
+                <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient" data-search-ingredients-target="ingredient" data-action="click->display-recipes#activate">
                   <%= i.name %>
                 </span>
               <%end%>
@@ -68,7 +65,7 @@
     </div>
     <div class="col-9">
       <div class="container">
-        <div class="row justify-content-center" data-display-recipes-target="recipes">
+        <div class="row justify-content-center" data-controller='favorite' data-display-recipes-target="recipes">
         </div>
       </div>
     </div>
