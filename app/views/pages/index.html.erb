@@ -47,7 +47,7 @@
 
     <div class="col-8 container-recipes">
 
-      <div class="row justify-content-center grid-ingreditents" data-display-recipes-target="recipes">
+      <div class="row justify-content-center grid-ingreditents" data-controller='favorite' data-display-recipes-target="recipes">
       </div>
     </div>
     <div class="d-flex row justify-content-center m-3">
@@ -55,7 +55,7 @@
         <%= form_tag pages_path, method: :get, class: "d-grid search-recipes", data: { action: "submit->display-recipes#buildQuery", display_recipes_target: "form" }, remote: true  do %>
           <%= text_field_tag :ingredients,
               params[:ingredients],
-              class: "form-control grid-ingreditents",
+              class: "form-control",
               type: :hidden,
               data: { display_recipes_target: "input" }%>
           <%= submit_tag "Search recipes", class: "btn  btn-footer-ingredients" %>
