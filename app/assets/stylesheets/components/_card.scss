@@ -1,8 +1,21 @@
 .fit-content {
   height: fit-content;
-  overflow-y: auto;
+  // overflow-y: auto;
 }
-
+.card {
+  height: 300px;
+  width: 300px;
+  padding: 5px;
+}
+// .card-body {
+//   height: 150px;
+// }
+.card-title a {
+  color: #DD4A48;
+}
+.card-text .card-title {
+  text-overflow: ellipsis;
+}
 .card-product {
   overflow: hidden;
   height: 200px;
