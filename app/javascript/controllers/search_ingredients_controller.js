@@ -36,6 +36,7 @@ export default class extends Controller {
   // }
 
   activate (event) {
+    console.log(event)
     event.currentTarget.classList.toggle('active')
     this.ingredientTargets.forEach ((ingredient) => {
       if (ingredient.innerText === event.currentTarget.innerText) {

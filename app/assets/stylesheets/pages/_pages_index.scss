@@ -28,7 +28,6 @@
 .btn-footer-ingredients {
   color: white;
   background-color: #DD4A48;
-  // border: 1px solid #DD4A48;
   border-radius: 8px;
 }
 .btn-footer-ingredients:hover {
@@ -90,6 +89,11 @@
   background-position: bottom left;
   background-size: cover;
   padding: 0;
+}
+
+.grid-ingreditents {
+  overflow-y: scroll;
+  height: 65vh;
 }
 // -------------card-category-------------
 
