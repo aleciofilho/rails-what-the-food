@@ -1,0 +1,84 @@
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #DD4A48;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  position: absolute;
+  align-items: center;
+  h1 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    }
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.sidebar a.active {
+  background-color: #728f72;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #728f72;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+.user-image {
+  width: 95%;
+  border-radius: 50%;
+}
+
+.about {
+  background-size: cover;
+  background-image: linear-gradient(to right, #ffffff93, #728f72b9);
+  background-position: center;
+  padding: 90px 0;
+}
+
+.about h1 {
+  margin: 0;
+  color: black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.about p {
+  font-size: 20px;
+  color: black;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
