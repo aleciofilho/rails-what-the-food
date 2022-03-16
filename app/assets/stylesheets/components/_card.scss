@@ -12,10 +12,15 @@
 // }
 .card-title{
   color: #728f72;
+  font-weight: bold;
 }
-.card-text .card-title {
-  text-overflow: ellipsis;
+.card-title:hover {
+  color: #DD4A48 ;
+  transition: 0.4s;
 }
+// .card-text .card-title {
+//   text-overflow: ellipsis;
+// }
 .card-product {
   overflow: hidden;
   height: 200px;
@@ -47,4 +52,19 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+.favorites-icons {
+  justify-content: space-between;
+  p{
+    margin: 0;
+  }
+}
+.heart-icon {
+  color: #DD4A48;
+}
+.like-icon {
+  color: #2173a3;
+}
+.card-body {
+  justify-content: space-between;
 }
