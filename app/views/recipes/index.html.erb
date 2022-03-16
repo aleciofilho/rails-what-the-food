@@ -30,9 +30,15 @@
             <a href="#" class="card-title" data-action="click->show-details#show"><%= recipe['title'] %></a> |
             <span hidden data-show-details-target="id"><%= recipe['id'] %></span>
 
-            <%= link_to favorites_path(recipe: recipe), method: :post,
-                                                        remote: true do %>
-              <i class="fas fa-bookmark" data-action='click->favorite#save'></i>
+            <% if user_signed_in? %>
+              <%= link_to favorites_path(recipe: recipe), method: :post,
+                                                          remote: true do %>
+                <i class="fas fa-bookmark" data-action='click->favorite#save'></i>
+              <% end %>
+            <% else %>
+              <%= link_to new_user_session_path do %>
+                <i class="fas fa-bookmark"></i>
+              <% end %>
             <% end %>
 
             <p class="card-text"><%= recipe['likes'] %> <i class="fas fa-thumbs-up"></i></p>
@@ -42,20 +48,22 @@
           </div>
         </div>
       <% end %>
-      <%= link_to user_path(current_user), style: "text-decoration:none; color: #000;" do %>
-        <div class="flash flash-success alert alert-dismissible fade show d-none" role="alert" data-favorite-target="alert">
-          <span><strong>Saved!</strong> ❤️ You favorite this recipe in your profile page</span>
+      <% if user_signed_in? %>
+        <%= link_to user_path(current_user), style: "text-decoration:none; color: #000;" do %>
+          <div class="flash flash-success alert alert-dismissible fade show d-none" role="alert" data-favorite-target="alert">
+            <span><strong>Saved!</strong> ❤️ You favorite this recipe in your profile page</span>
+            <a data-action='click->favorite#close'>
+              <i class="fas fa-times"></i>
+            </a>
+          </div>
+        <% end %>
+        <div class="flash flash-warning alert alert-dismissible fade show d-none" role="alert" data-favorite-target="duplicate">
+          <span><strong>Mmh</strong> 🤔 seems you've already added this recipe</span>
           <a data-action='click->favorite#close'>
             <i class="fas fa-times"></i>
           </a>
         </div>
       <% end %>
-      <div class="flash flash-warning alert alert-dismissible fade show d-none" role="alert" data-favorite-target="duplicate">
-        <span><strong>Mmh</strong> 🤔 seems you've already added this recipe</span>
-        <a data-action='click->favorite#close'>
-          <i class="fas fa-times"></i>
-        </a>
-      </div>
     <% end %>
   </div>
 </div>
