@@ -14,43 +14,43 @@
       <div class="container">
         <h1>About me</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-        <a class="btn btn-flat" href="#">Edit Profile</a>
+        <a class="btn-edit" href="#">Edit Profile</a>
       </div>
     </div>
 
+    <div class="fav-recipes">
+      <h1>My favorite recipes:</h1>
 
-    <h2>My favorite recipes:</h2>
-
-      <!-- Podem mexer a vontade nos cards, eu só queria ver se as infos estavam todas certas -->
-      <!-- style: _card.scss -->
-        <% unless current_user.favorites.count == 0 %>
-          <% current_user.favorites.each do |favorite| %>
-          <div class="card-product my-2">
-            <img src="<%= favorite.recipe.image %>" />
-            <div class="card-product-infos">
-              <h2><%= favorite.recipe.name %></h2>
-              <p>"<%= sanitize favorite.recipe.description %>..."</p>
-              <div class="icons">
-                <p><%= favorite.recipe.likes %> <i class="fas fa-thumbs-up"></i></p>
-                <p><%= favorite.recipe.prep_time %> minutes</p>
-                <p>Serving <strong><%= favorite.recipe.likes %></strong> people</i></p>
-              </div>
-              <div class="end-card">
-                <a href="<%=sanitize favorite.recipe.url%>" target="_blank">Go to website</a> |
-                <%= link_to "delete", favorite_path(favorite),
-                                      method: :delete,
-                                      data: { :confirm => 'Are you sure?'},
-                                      style: "color: red;" %>
+        <!-- Podem mexer a vontade nos cards, eu só queria ver se as infos estavam todas certas -->
+        <!-- style: _card.scss -->
+          <% unless current_user.favorites.count == 0 %>
+            <% current_user.favorites.each do |favorite| %>
+            <div class="card-product my-2">
+              <img src="<%= favorite.recipe.image %>" />
+              <div class="card-product-infos">
+                <h2><%= favorite.recipe.name %></h2>
+                <p>"<%= sanitize favorite.recipe.description %>..."</p>
+                <div class="icons">
+                  <p><%= favorite.recipe.likes %> <i class="fas fa-thumbs-up"></i></p>
+                  <p><%= favorite.recipe.prep_time %> minutes</p>
+                  <p>Serving <strong><%= favorite.recipe.likes %></strong> people</i></p>
+                </div>
+                <div class="end-card">
+                  <a href="<%=sanitize favorite.recipe.url%>" target="_blank">Go to website</a> |
+                  <%= link_to "delete", favorite_path(favorite),
+                                        method: :delete,
+                                        data: { :confirm => 'Are you sure?'},
+                                        style: "color: red;" %>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <% end %>
+      <% else %>
+        <p style="color: red;">You didn't add any recipes yet...</p>
       <% end %>
-    <% else %>
-      <p style="color: red;">You didn't add any recipes yet...</p>
-    <% end %>
-
+    </div>
     <!--------------------------- My Fridge ----------------------------------->
     <h2>My Fridge:</h2>
     <p>Add the ingredients you have in your house:</p>

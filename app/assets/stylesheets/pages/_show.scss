@@ -77,8 +77,38 @@ div.content {
 }
 
 .about p {
-  font-size: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  font-size: 15px;
   color: black;
-  opacity: .7;
+}
+
+.btn-edit {
+  color: #728F72;
+  background-color: transparent;
+  border: 1px solid #728F72;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 20px
+}
+
+.btn-edit:hover{
+  color: #DD4A48;
+  border: 1px solid #DD4A48;
+  transition: 0.6s;
+  box-shadow: 1px 1px 5px #DD4A48;
+}
+
+.fav-recipes {
+  background-size: cover;
+  background-image: linear-gradient(to left, #ffffff93, #DD4A48);
+  background-position: center;
+  padding: 90px 0;
+}
+
+.fav-recipes h1 {
+  color: black;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
 }
