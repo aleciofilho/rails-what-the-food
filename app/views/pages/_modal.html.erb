@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop<%= recipe['id'] %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop<%= recipe['id'] %>Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- LUCAS / JOÃO PAULO imagem para usar -->
+        <%#= image_tag recipe['image'] %>
+        <h5 class="modal-title" id="staticBackdrop<%= recipe['id'] %>Label"><%= recipe['title'] %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-icons d-flex justify-content-around">
+          <p data-show-details-target="likes"></p>|
+          <p data-show-details-target="serving"></p>|
+          <p data-show-details-target="minutes"></p>
+        </div>
+          <p data-show-details-target="summary"></p>
+          <p data-show-details-target="url"><br></p>
+      </div>
+      <div class="ingredients-list d-flex justify-content-around">
+        <div class="used">
+          <p><strong>You have:</strong></p>
+          <% recipe['usedIngredients'].each do |ingredient|%>
+            <p><%= ingredient['name'] %></p>
+          <% end %>
+        </div>
+        <div class="missing">
+          <p><strong>Missing:</strong></p>
+            <% recipe['missedIngredients'].each do |ingredient|%>
+              <p><%= ingredient['name'] %></p>
+            <% end %>
+        </div>
+      </div>
+      <!--
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
