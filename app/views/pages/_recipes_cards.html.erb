@@ -1,20 +1,20 @@
-<% if @receitas  %>
-          <% @receitas.each do |recipe| %>
+<% if @recipes  %>
+          <% @recipes.each do |recipe| %>
             <div class="card col-4 col-sm-8 m-1 fit-content" style="width: 18rem;" data-controller="show-details" data-show-details-target="card">
-              <%= image_tag recipe.url, class: "card-img-top" %>
+              <%= image_tag recipe['image'], class: "card-img-top" %>
               <div class="card-body d-flex flex-column">
               <div class="title-recipes-card d-flex  justify-content-center">
-                <a href="#" class="card-title"><%= recipe.name %></a>
-                <span hidden data-show-details-target="id"><%= recipe.id %></span>
+                <a href="#" class="card-title"><%= recipe['title'] %></a>
+                <span hidden data-show-details-target="id"><%= recipe['id'] %></span>
               </div>
 
 
                 <div class="favorites-icons d-flex">
-                  <p class="card-text"><%= recipe.likes %> <i class="fas fa-thumbs-up like-icon"></i></p>
+                  <p class="card-text"><%= recipe['likes'] %> <i class="fas fa-thumbs-up like-icon"></i></p>
                   <% if user_signed_in? %>
                     <%= link_to favorites_path(recipe: recipe), method: :post,
                                                                 remote: true do %>
-                      <i class="fa-solid fa-heart" data-action='click->favorite#save'></i>
+                      <i class="fas fa-solid fa-heart heart-icon" data-action='click->favorite#save'></i>
                     <% end %>
                     <% else %>
                     <%= link_to new_user_session_path do %>
