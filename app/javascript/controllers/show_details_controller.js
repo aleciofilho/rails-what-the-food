@@ -11,7 +11,7 @@ export default class extends Controller {
     this.servingTarget.insertAdjacentHTML('beforeend', `Serving ${data.servings} people`);
     this.minutesTarget.insertAdjacentHTML('beforeend',` ${data.readyInMinutes} minutes`);
     this.summaryTarget.insertAdjacentHTML('beforeend', `"${data.summary.substring(0, 280)}..."`);
-    this.urlTarget.insertAdjacentHTML('beforeend', `<a href="${data.sourceUrl}" target="_blank">Ir para o site</a>`);
+    this.urlTarget.insertAdjacentHTML('beforeend', `<a href="${data.sourceUrl}" target="_blank">Go to this recipe webpage</a>`);
   }
 
   fetchRecipe(id) {
