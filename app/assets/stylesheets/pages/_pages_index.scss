@@ -1,13 +1,55 @@
+// ---------Button--------
+
+.btn-header-ingredients {
+  margin-left: 10px;
+  color: #728f72;
+  background-color: transparent;
+  border: 1px solid #728f72;
+  border-radius: 8px;
+}
+.btn-header-ingredients:hover {
+  color: #DD4A48;
+  border: 1px solid #DD4A48;
+  transition: 0.5s;
+  box-shadow: 2px 3px 8px #DD4A48;
+}
+.btn-ingredients {
+  margin-left: 10px;
+  color: #728f72;
+  background-color: transparent;
+  border: 1px solid #728f72;
+  border-radius: 10px;
+}
+.btn-ingredients:hover {
+  color: white !important;
+  background-color: #DD4A48 !important;
+  border: 1px solid #DD4A48 !important;
+}
+.btn-footer-ingredients {
+  color: white;
+  background-color: #DD4A48;
+  border-radius: 8px;
+}
+.btn-footer-ingredients:hover {
+  background-color: #728f72;
+  color: white;
+  transition: 0.4s;
+}
+
+// -------------containers-------------
+
+
 .page-container {
   height: 90vh;
 }
 
 .sidebar-ingredients {
   position: relative;
+  // width: 400px;
+  padding: 0;
 }
-
 .pantry-header {
-  height: 120px;
+  height: 100px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -15,6 +57,9 @@
   background-color: rgb(255, 255, 255);
   h2 {
     font-size: 1.25rem;
+    color: #DD4A48;
+    text-shadow: 1px 1px 3px rgba(150, 122, 122, 0.2);
+    font-weight: bold;
   }
 
   .searched-ingredients {
@@ -23,38 +68,70 @@
     background-color: rgba(255, 255, 255, 0.8);
   }
 }
+.pantry-search-bar {
+  // background-color: red;
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
 
 .categories-container {
-  height: 70vh;
+  height: 65vh;
   overflow-y: scroll;
   padding: 10px;
-  background-color: rgb(235, 232, 227);
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // gap: 10px
-
+  background-color: #C0D8C0;
+  border-radius: 5px;
 }
+
+
+.container-recipes{
+  background-image: url("bg16.jpg");
+  background-position: bottom left;
+  background-size: cover;
+  padding: 0;
+}
+
+.grid-ingreditents {
+  overflow-y: scroll;
+  height: 65vh;
+  padding: 10px 0;
+}
+// -------------card-category-------------
 
 .card-category {
   // width: 90vw;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
 
   .card-category-header {
     background-color: white;
     border-bottom: 1px solid rgba(0,0,0,0.2);
+    height: 100px;
 
     h2 {
       font-size: 1rem;
+      color: white;
+      text-shadow: 1px 1px 3px rgb(104, 97, 97);
+      font-weight: bold;
     }
   }
+}
+.back {
+  background-image: linear-gradient(rgba(128, 124, 124, 0.4),rgba(85, 85, 85, 0.4)), url("bg7.jpg");
+  background-size: cover;
+}
 
-  .search-recipes {
-    z-index: 1000;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
+
+// ---------recipes--------
+
+
+.text-header-ingredients {
+  color: #DD4A48;
+  text-shadow: 1px 1px 3px rgb(104, 97, 97);
+  font-weight: bold;
+}
+
+.typed-cursor {
+  display: none;
 }
