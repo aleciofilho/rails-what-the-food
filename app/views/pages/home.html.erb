@@ -25,7 +25,7 @@
             </div>
           <%# <% end %>
         </div>
-        <div class="link-container row justify-content-center">
+        <div class="link-container link-container-center row justify-content-center">
           <%# <% link_to "#" do %>
             <div class="col-6">
               <a href="#">
@@ -57,6 +57,16 @@
 
   </div>
 
+  <%# ------------- About Us ------------- %>
+
+<div class="banner">
+  <div class="container-aboutus">
+    <h2>About us</h2><br>
+    <h3>Le Wagon students <strong>passionate</strong> about programming and ideas <strong>change the world</strong>!</h3><br>
+    <p>We are students driven by curiosity and the desire to apply our ideas to the world. This is our first project, developed with a lot of passion and dedication to reach you</p>
+  </div>
+</div>
+
 <%# ------------- carousel ------------- %>
 
 <div id="carouselExampleCaptions" class="carousel slide carousel-home" data-bs-ride="carousel">
@@ -68,30 +78,17 @@
   <div class="carousel-inner carousel-card">
     <div class="carousel-item active">
       <div class="card-trip">
-        <%= image_tag "bg16.jpg" %>
+        <%= image_tag "bg13.jpg" %>
         <div class="card-trip-infos d-flex justify-content-center">
-          <div>
-            <h2>Ricardo</h2>
-            <p>Estudante, cozinheiro de primeira viagem</p>
-          </div>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        </div>
-      </div>
-      <div class="carousel-caption d-none d-md-block carousel-text">
-        <h5>Incredible experience</h5>
-        <p>My experience could not have been better with What the Food</p>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="card-trip">
-         <%= image_tag "bg16.jpg" %>
-        <div class="card-trip-infos d-flex justify-content-center">
-          <div>
+          <div class="d-flex">
+            <div class="card-info-container"></div>
+            <div class="">
             <h2>Leandro</h2>
-            <p>Estudante, cozinheiro de primeira viagem</p>
+            <p>Estudante, cozinheira de primeira viagem</p>
+            </div>
+
           </div>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <%= image_tag "person2.jpg", class: "card-trip-user avatar-bordered"  %>
         </div>
       </div>
       <div class="carousel-caption d-none d-md-block carousel-text">
@@ -102,11 +99,35 @@
 
     <div class="carousel-item">
       <div class="card-trip">
-         <%= image_tag "bg16.jpg" %>
+         <%= image_tag "bg13.jpg" %>
         <div class="card-trip-infos d-flex justify-content-center">
-          <div class="">
+          <div class="d-flex">
+            <div class="card-info-container"></div>
+            <div class="" >
+            <h2>Ricardo</h2>
+            <p>Estudante, cozinheira de primeira viagem</p>
+            </div>
+
+          </div>
+          <%= image_tag "person3.jpg", class: "card-trip-user avatar-bordered"  %>
+        </div>
+      </div>
+      <div class="carousel-caption d-none d-md-block carousel-text">
+        <h5>Incredible experience</h5>
+        <p>My experience could not have been better with What the Food</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="card-trip">
+         <%= image_tag "bg13.jpg" %>
+        <div class="card-trip-infos d-flex justify-content-center">
+          <div class="d-flex">
+            <div>
             <h2>Julia</h2>
             <p>Estudante, cozinheira de primeira viagem</p>
+            </div>
+
           </div>
           <%= image_tag "person1.jpg", class: "card-trip-user avatar-bordered"  %>
         </div>
@@ -125,14 +146,4 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
-
-<%# ------------- About Us ------------- %>
-
-<div class="banner">
-  <div class="container-aboutus">
-    <h2>About us</h2><br>
-    <h3>Le Wagon students <strong>passionate</strong> about programming and ideas <strong>change the world</strong>!</h3><br>
-    <p>We are students driven by curiosity and the desire to apply our ideas to the world. This is our first project, developed with a lot of passion and dedication to reach you</p>
-  </div>
 </div>
