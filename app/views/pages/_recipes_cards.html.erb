@@ -14,7 +14,13 @@
 
 
         <div class="favorites-icons d-flex">
-          <p class="card-text"><%= recipe['likes'] %> <i class="fas fa-thumbs-up like-icon"></i></p>
+          <p class="card-text">
+            <% if recipe['missedIngredientCount'].zero? %>
+              <%= "all ingredients used" %>
+            <% else %>
+              <%= "missing #{recipe['missedIngredientCount']} ingredients" %>
+            <% end %>
+          </p>
           <% if user_signed_in? %>
             <%= link_to favorites_path(recipe: recipe), method: :post,
                                                         remote: true do %>

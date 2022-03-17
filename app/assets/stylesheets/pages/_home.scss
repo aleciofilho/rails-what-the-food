@@ -42,8 +42,6 @@
   height: 150px;
 }
 .link-cicle-start {
-  border: 1px solid #728f72;
-  // border-width: 10px;
   border-radius: 100%;
   width: 100px;
   height: 100px;
@@ -51,10 +49,11 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
 }
 .link-cicle-start:hover {
-  border: 2px solid #DD4A48;
-  box-shadow: 1px 3px 6px #DD4A48;
+  outline: 1px solid #728f72 ;
+  outline-offset: 10px;
   transition: 0.4s;
 }
 .link-cicle-center {
@@ -68,8 +67,8 @@
   height: 200px;
 }
 .link-cicle-center:hover {
-  border: 2px solid #DD4A48;
-  box-shadow: 1px 3px 6px #DD4A48;
+  outline: 1px solid #728f72 ;
+  outline-offset: 10px;
   transition: 0.4s;
 }
 .link-cicle-end {
@@ -83,8 +82,8 @@
   background-repeat: no-repeat;
 }
 .link-cicle-end:hover {
-  border: 2px solid #DD4A48;
-  box-shadow: 1px 3px 6px #DD4A48;
+  outline: 1px solid #728f72 ;
+  outline-offset: 10px;
   transition: 0.4s;
 }
 .cicles-text {
@@ -120,36 +119,27 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  width: 650px;
 }
 
 .card-trip > img {
   height: 200px;
   width: 100%;
   object-fit: cover;
-  opacity: 0.9;
 }
 
 .card-trip h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color: #728f72;
 }
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
-}
-.card-trip-bg {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url("bg13.jpg");
-  background-position: center;
-  background-size: cover;
-  height: 200px;
-    h4 {
-      color: #ffffff;
-    }
 }
 .card-trip .card-trip-infos {
   padding: 16px;
@@ -159,10 +149,11 @@
 
 .card-trip-user {
   position: absolute;
-  right: 430px;
+  right: 480px;
   top: -100px;
   width: 200px;
-  // height: 200px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .card-trip-infos {
@@ -175,6 +166,16 @@
     display: inline-block;
     margin-right: 5px;
     font-size: 17px;
+  }
+}
+.carousel-text {
+  h5 {
+    color: #DD4A48;
+    // font-weight: bold;
+  }
+  p {
+    color: #DD4A48;
+    // font-weight: bold;
   }
 }
 
