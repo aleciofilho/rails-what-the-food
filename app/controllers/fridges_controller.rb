@@ -1,21 +1,29 @@
 class FridgesController < ApplicationController
-
   def create
     @ingredients = params[:ingredients].split(',')
-    @fridge = Fridge.new(fridge_params)
-    @fridge.user = current_user
-
-    respond_to do |format|
-      format.html # Follow regular flow of Rails
-      if @ingredients
-        format.text { render partial: 'users/teste', locals: { ingredients: @ingredients }, formats: [:html] }
-      end
+    @ingredients.each do |ingredient|
+      @ingredient = Ingredient.find_by(name: ingredient)
+      @fridge = Fridge.new
+      @fridge.ingredient = @ingredient
+      @fridge.user = current_user
+      @fridge.save!
     end
+
+    redirect_to user_path(current_user)
+
+    # if @fridge.save
+    #   respond_to do |format|
+    #     format.html # Follow regular flow of Rails
+
+    #     format.text { render partial: 'users/teste', locals: { ingredient: @ingredient }, formats: [:html] }
+    #   end
+    # end
   end
 
-  private
+  def destroy
+    @fridge = Fridge.find(params[:id])
+    @fridge.destroy
 
-  def fridge_params
-    params.require(:fridge).permit(:ingredient)
+    redirect_to user_path(current_user)
   end
 end
