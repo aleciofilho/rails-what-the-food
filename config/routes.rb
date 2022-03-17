@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   end
 
   resources :recipes, only: %i[index]
-  resources :fridges, only: %i[create delete]
+  resources :fridges, only: %i[create destroy]
   resources :favorites, only: %i[create destroy]
 end

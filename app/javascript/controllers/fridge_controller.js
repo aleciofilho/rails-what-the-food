@@ -14,24 +14,26 @@ export default class extends Controller {
         if (ingredient.classList.contains('active')) {
           query += `${ingredient.innerText},`;
         }})
-      query = query.slice(0, -1);
+      // this.fetchData(ingredient.innerText)
+      // // query = query.slice(0, -1);
       this.inputTarget.value = query
-      this.fetchData()
+      this.formTarget.submit()
+      // this.fetchData()
       // this.formTarget.reset();
       // console.log(query)
     }
 
-    fetchData (query) {
+    fetchData (ingredient) {
       const url = `${this.formTarget.action}`
       fetch(url, {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify(this.inputTarget.value) })
-      .then(response => response.text())
+        body: JSON.stringify({ingredient})
+      }).then(response => response.text())
       .then((data) => {
         console.log(data)
         // this.ingredientsTarget.insertAdjacentHTML("beforeend", data)
-        console.log("cheguei aqui")
+        // console.log("cheguei aqui")
       })
     // .then(pegar @ingredients)
     // .then(data => buildHTML(data))
