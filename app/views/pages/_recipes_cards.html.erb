@@ -4,7 +4,11 @@
       <%= image_tag recipe['image'], class: "card-img-top" %>
       <div class="card-body d-flex flex-column">
       <div class="title-recipes-card d-flex  justify-content-center">
-        <a href="#" class="card-title"><%= recipe['title'] %></a>
+        <a href="#" class="card-title" data-bs-toggle="modal"
+                                       data-bs-target="#staticBackdrop<%= recipe['id'] %>"
+                                       data-action="click->show-details#show">
+          <%= recipe['title'] %>
+        </a>
         <span hidden data-show-details-target="id"><%= recipe['id'] %></span>
       </div>
 
@@ -29,8 +33,11 @@
           <% end %>
         </div>
 
+        <!-- MODAL -->
+        <%= render 'modal', recipe: recipe, remote: true %>
 
-        <div class="more-info d-none" data-show-details-target="info">
+        <div class="more-info d-none">
+          <!-- data-show-details-target="info" -->
         </div>
       </div>
     </div>
