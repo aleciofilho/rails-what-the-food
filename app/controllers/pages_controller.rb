@@ -18,5 +18,6 @@ class PagesController < ApplicationController
         format.text { render partial: 'pages/recipes_cards', locals: { recipes: @recipes }, formats: [:html] }
       end
     end
+    @receitas = Recipe.first(10)
   end
 end
