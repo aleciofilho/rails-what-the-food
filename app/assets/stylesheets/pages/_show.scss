@@ -65,7 +65,9 @@ div.content {
   background-size: cover;
   background-image: linear-gradient(to right, #ffffff93, #728f72b9);
   background-position: center;
-  padding: 90px 0;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .about h1 {
@@ -74,6 +76,7 @@ div.content {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  grid-column-start: 1;
 }
 
 .about p {
@@ -89,7 +92,7 @@ div.content {
   border: 1px solid #728F72;
   border-radius: 20px;
   width: 100%;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 .btn-edit:hover{
@@ -101,9 +104,9 @@ div.content {
 
 .fav-recipes {
   background-size: cover;
-  background-image: linear-gradient(to left, #ffffff93, #DD4A48);
+  background-image: linear-gradient(to left, #ffffff93, #858080);
   background-position: center;
-  padding: 90px 0;
+  padding: 10px 0;
 }
 
 .fav-recipes h1 {
