@@ -41,10 +41,12 @@
               </div>
               <div class="end-card">
                 <a href="<%=sanitize favorite.recipe.url%>" target="_blank">Go to website</a> |
-                <%= link_to "delete", favorite_path(favorite),
-                                      method: :delete,
-                                      data: { :confirm => 'Are you sure?'},
-                                      style: "color: red;" %>
+                <div class="delete-button rounded-circle">
+                  <%= link_to "delete", favorite_path(favorite),
+                                        method: :delete,
+                                        data: { :confirm => 'Are you sure?'},
+                                        style: "color: red;" %>
+                </div>
               </div>
             </div>
           </div>
