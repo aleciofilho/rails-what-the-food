@@ -23,8 +23,9 @@
           </p>
           <% if user_signed_in? %>
             <% if current_user.recipes.pluck(:spoon_id).include?(recipe['id']) %>
-              <%= link_to favorite_path(id: recipe), method: :delete,
-                                                         remote: true do %>
+              <%= link_to destroy_favorite_path(spoon_id: recipe['id']), method: :delete,
+                                                                         class: "saved",
+                                                                         remote: true do %>
                 <i class="fas fa-solid fa-heart heart-icon" data-action='click->favorite#save' data-favorite-target="heart"></i>
               <% end %>
             <% else %>
