@@ -21,7 +21,8 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
+    recipe = Recipe.where(spoon_id: params[:recipe][:id]).first
+    @favorite = Favorite.where(user: current_user, recipe: recipe).first
     @favorite.destroy
 
     redirect_to user_path(current_user)
