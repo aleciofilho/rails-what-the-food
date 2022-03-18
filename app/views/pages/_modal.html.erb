@@ -3,31 +3,42 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <!-- LUCAS / JOÃO PAULO imagem para usar -->
-        <%#= image_tag recipe['image'] %>
-        <h5 class="modal-title" id="staticBackdrop<%= recipe['id'] %>Label"><%= recipe['title'] %></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div >
+          <%= image_tag recipe['image'], class: "img-header-modal" %>
+        </div>
+
+        <div class="text-header-modal">
+          <h3 class="modal-title" id="staticBackdrop<%= recipe['id'] %>Label"><%= recipe['title'] %></h3>
+        </div>
+        <div class="btn-header-modal d-flex alig-self-start">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
       </div>
       <div class="modal-body">
         <div class="modal-icons d-flex justify-content-around">
-          <p data-show-details-target="likes"></p>|
+          <p data-show-details-target="likes" class="like-modal"></p>|
           <p data-show-details-target="serving"></p>|
           <p data-show-details-target="minutes"></p>
         </div>
-          <p data-show-details-target="summary"></p>
-          <p data-show-details-target="url"><br></p>
+          <p data-show-details-target="summary" class="summary-modal"></p>
+          <div class="submit-recipes-modal d-flex justify-content-center">
+
+              <p data-show-details-target="url" class="btn-modal"><br></p>
+
+          </div>
+
       </div>
       <div class="ingredients-list d-flex justify-content-around">
         <div class="used">
-          <p><strong>You have:</strong></p>
+          <p class="youhave-modal"><strong>You have:</strong></p>
           <% recipe['usedIngredients'].each do |ingredient|%>
-            <p><%= ingredient['name'] %></p>
+            <p class="youhave-modal"><%= ingredient['name'] %></p>
           <% end %>
         </div>
         <div class="missing">
-          <p><strong>Missing:</strong></p>
+          <p class="missing-modal"><strong>Missing:</strong></p>
             <% recipe['missedIngredients'].each do |ingredient|%>
-              <p><%= ingredient['name'] %></p>
+              <p class="missing-modal"><%= ingredient['name'] %></p>
             <% end %>
         </div>
       </div>
