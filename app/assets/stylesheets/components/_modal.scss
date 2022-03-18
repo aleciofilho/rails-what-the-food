@@ -9,7 +9,7 @@
 }
 .modal-body {
   padding: 20px 40px;
-  height: 250px;
+  height: 270px;
 }
 .img-header-modal {
   border-radius: 10px;
@@ -23,6 +23,7 @@
 .btn-header-modal {
   flex-direction: column;
   align-self: flex-start;
+  width: 100px;
 }
 .modal-icons {
   p {
@@ -31,6 +32,7 @@
 }
 .summary-modal {
   color: #728f72;
+  margin-top: 25px;
 }
 .submit-recipes-modal {
   p {
@@ -45,14 +47,23 @@
   background-image: linear-gradient(to right, #ffffff93, #8da88d6c);
 }
 .btn-modal {
-  color: #DD4A48;
-  background-color: transparent;
-  border: 1px solid #DD4A48;
+  background-color: #728f72;
   border-radius: 20px;
   padding: 0 15px;
+  align-items: center;
+  display: flex;
+  margin-top: 10px;
   a {
-    color: #728f72;
+    color: white;
+    padding: 5px;
   }
+}
+.btn-modal:hover {
+  background-color: #DD4A48;
+  transition: 0.5s;
+}
+.btn-modal a:hover {
+
 }
 .youhave-modal {
   color: #728f72;
@@ -63,4 +74,9 @@
 .modal-title {
   margin-left: 15px;
 }
-
+.submit-recipes-modal {
+  margin-top: 40px;
+}
+.like-modal {
+  color: #728f72;
+}
