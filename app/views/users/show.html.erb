@@ -5,14 +5,14 @@
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "user-image", alt: "user-image" %>
       </div>
       <h1><%= @user.name %></h1>
-      <a class="sidebar-option" href="#myprofile">My Profile</a>
-      <a class="sidebar-option" href="#myrecipes">My Recipes</a>
-      <a class="sidebar-option" href="#myfridge">My Fridge</a>
+      <a href="#myprofile">My Profile</a>
+      <a href="#myrecipes">My Recipes</a>
+      <a href="#myfridge">My Fridge</a>
     </div>
 
     <div class="content">
 
-      <div class="flex-about mb-5">
+      <div class="flex-about">
         <div class="about-info">
           <h1>About me</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -54,59 +54,56 @@
         <% end %>
       </div>
     <!--------------------------- My Fridge ----------------------------------->
-    <div class="my-fridge-class">
-      <h1>My Fridge:</h1>
-      <div data-fridge-target="ingredients">
-        <% current_user.fridges.each do |fridge| %>
-          <div class="btn btn-primary btn-sm mb-1 button-ingredient" >
-            <%= fridge.ingredient.name %>
-            <div class="button-delete rounded-circle">
-              <%= link_to "x",
-                          fridge_path(fridge),
-                          method: :delete,
-                          data: { :confirm => 'Are you sure?'},
-                          style: "color: white;" %>
+    <h2>My Fridge:</h2>
+    <div data-fridge-target="ingredients">
+      <% current_user.fridges.each do |fridge| %>
+        <div class="btn btn-primary btn-sm mb-1 button-ingredient" >
+          <%= fridge.ingredient.name %>
+          <div class="button-delete rounded-circle">
+            <%= link_to "x",
+                        fridge_path(fridge),
+                        method: :delete,
+                        data: { :confirm => 'Are you sure?'},
+                        style: "color: white;" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
+    <p>Add the ingredients you have in your house:</p>
+
+    <div data-controller="display-recipes fridge">
+      <div class="categories-container pb-0">
+        <% @categories.each do |category| %>
+          <div class="card-category mb-2 p-1">
+            <div class="card-category-header">
+              <h2><%= category.name %></h2>
+            </div>
+            <div class="card-body">
+              <% category.ingredients.first(10).each do |i|%>
+                <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient"
+                                                                  data-fridge-target="ingredient"
+                                                                  data-action="click->display-recipes#activate">
+                  <%= i.name %>
+                </span>
+              <%end%>
             </div>
           </div>
         <% end %>
       </div>
 
-
-        <p class="add-ingredients">Add the ingredients you have in your house:</p>
-
-        <div data-controller="display-recipes fridge">
-          <div class="categories-container pb-0">
-            <% @categories.each do |category| %>
-              <div class="card-category mb-2 p-1">
-                <div class="card-category-header">
-                  <h2><%= category.name %></h2>
-                </div>
-                <div class="card-body">
-                  <% category.ingredients.first(10).each do |i|%>
-                    <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient"
-                                                                      data-fridge-target="ingredient"
-                                                                      data-action="click->display-recipes#activate">
-                      <%= i.name %>
-                    </span>
-                  <%end%>
-                </div>
-              </div>
-            <% end %>
-          </div>
-
-          <%= form_tag fridges_path(ingredient: params[:ingredient]),
-                                    method: :post,
-                                    class: "d-grid search-recipes",
-                                    data: { action: "submit->fridge#buildQuery",
-                                    fridge_target: "form" }  do %>
-            <%= text_field_tag :ingredients,
-                nil,
-                type: :hidden,
-                data: { fridge_target: "input" }%>
-            <%= submit_tag "Add to your fridge", class: "btn btn-primary" %>
-          <% end %>
-        </div>
+      <%= form_tag fridges_path(ingredient: params[:ingredient]),
+                                method: :post,
+                                class: "d-grid search-recipes",
+                                data: { action: "submit->fridge#buildQuery",
+                                fridge_target: "form" }  do %>
+        <%= text_field_tag :ingredients,
+            nil,
+            type: :hidden,
+            data: { fridge_target: "input" }%>
+        <%= submit_tag "Add to your fridge", class: "btn btn-primary" %>
+      <% end %>
     </div>
-
   </div>
 </div>
