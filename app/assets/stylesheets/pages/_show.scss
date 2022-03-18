@@ -2,10 +2,12 @@
   max-height: 150vh;
   margin: 0;
   padding: 15px;
-  width: 25vw;
+  width: 30vw;
   background-color: #DD4A48;
   height: 150vh;
   align-items: center;
+  position: sticky;
+  top: 0;
 
   h1 {
     color: white;
@@ -27,31 +29,34 @@
   color: white;
 }
 
-.sidebar a:hover:not(.active) {
+.sidebar a:hover {
   background-color: #728f72;
   color: white;
+  object-fit: fill;
 }
 
 div.content {
   padding: 1px 16px;
   height: 1000px;
+  overflow-y: scroll;
 }
 
 .flex-about {
   display: flex;
   width: 100%;
-  height: 30vh;
+  height: 43vh;
+  background-image: linear-gradient(to right, #ffffff93, #728f72);;
 }
 
 .about-info {
   display:flex;
   flex-direction: column;
-  width: 40%;
+  width: 30%;
   justify-content: center;
 
     h1 {
-      margin: 0;
-      color: black;
+      margin-left: 10px;
+      color: #DD4A48;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       font-size: 32px;
       font-weight: bold;
@@ -61,13 +66,14 @@ div.content {
     p {
       display: inline-block;
       margin-right: 5px;
+      margin-left: 10px;
       font-size: 15px;
       color: black;
     }
 }
 
 .about-image {
-  width: 60%;
+  width: 70%;
   background: url(plate.png);
   background-size: auto;
   background-position: center left;
@@ -100,9 +106,10 @@ div.content {
   color: #728f72;
   background-color: transparent;
   border: 1px solid #728f72;
-  border-radius: 20px;
+  border-radius: 15px;
   display: inline-block;
   margin-right: 30px;
+  margin-left: 10px;
   font-weight: lighter;
   padding: 3px;
   display: block;
@@ -119,14 +126,51 @@ div.content {
 
 .fav-recipes {
   background-size: cover;
-  background-image: linear-gradient(to right, #ffffff93, #e08281);
+  background-image: linear-gradient(to right, #ffffff93, #DD4A48);
   background-position: center;
   padding: 10px 0;
 }
 
 .fav-recipes h1 {
-  color: black;
+  color: #728f72;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  margin-left: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.my-fridge-class {
+  background-size: cover;
+  background-image: linear-gradient(to bottom, #ffffff93, #728f72);
+  background-position: center;
+  padding: 10px 0;
+
+    h1 {
+      margin-left: 10px;
+      color: #DD4A48;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-size: 32px;
+      font-weight: bold;
+      grid-column-start: 1;
+    }
+}
+
+.add-ingredients {
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 10px;
+  font-size: 15px;
+  color: black;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+footer {
+  margin-top: auto;
 }
