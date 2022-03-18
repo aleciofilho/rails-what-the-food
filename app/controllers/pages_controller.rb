@@ -16,6 +16,7 @@ class PagesController < ApplicationController
       end
       @user_recipes = SpoonacularService.new.recipes(@user_fridge_string[0..-2])
     end
+    # @favorite = Favorite.where(user: current_user, recipe: @new_recipe).first)
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
