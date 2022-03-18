@@ -28,7 +28,7 @@ export default class extends Controller {
   }
 
   // fetchRecipes (query) {
-  //   fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=eb83e47907a244ab86a9aeccc94ca035&ingredients=${query}&number=10`)
+  //   fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=ad1c142c27cb4f82a8078acc4e1522d5&ingredients=${query}&number=10`)
   //   .then(response => response.json())
   //   .then(data => this.insertRecipes(data))
   // }

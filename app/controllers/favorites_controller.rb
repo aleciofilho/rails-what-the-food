@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
   def create
     @spoonacular = SpoonacularService.new
-    @new_recipe = Recipe.where(spoon_id: params[:recipe][:id]).first
+    @new_recipe = Recipe.find_by(spoon_id: params[:recipe][:id])
 
     if @new_recipe.nil?
       @recipe = @spoonacular.show(params[:recipe][:id]) if params[:recipe][:id]
@@ -25,5 +25,11 @@ class FavoritesController < ApplicationController
     @favorite.destroy
 
     redirect_to user_path(current_user)
+  end
+
+  def destroy_favorite
+    recipe = Recipe.find_by(spoon_id: params[:spoon_id])
+    @favorite = Favorite.find_by(user: current_user, recipe: recipe)
+    @favorite.destroy
   end
 end

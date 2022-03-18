@@ -25,3 +25,23 @@
   color: #DD4A48;
 }
 
+.button-ingredient {
+  position: relative;
+
+  .button-delete {
+    background-color: #DD4A48;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    right: -8px;
+    bottom: 8px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    .button-delete {
+      opacity: 1;
+    }
+  }
+}
