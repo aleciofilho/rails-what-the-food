@@ -57,13 +57,15 @@
     <h2>My Fridge:</h2>
     <div data-fridge-target="ingredients">
       <% current_user.fridges.each do |fridge| %>
-        <div class="btn btn-outline-primary btn-sm mb-1" >
+        <div class="btn btn-primary btn-sm mb-1 button-ingredient" >
           <%= fridge.ingredient.name %>
-          <%= link_to "x",
-                      fridge_path(fridge),
-                      method: :delete,
-                      data: { :confirm => 'Are you sure?'},
-                      style: "color: red;" %>
+          <div class="button-delete rounded-circle">
+            <%= link_to "x",
+                        fridge_path(fridge),
+                        method: :delete,
+                        data: { :confirm => 'Are you sure?'},
+                        style: "color: white;" %>
+          </div>
         </div>
       <% end %>
     </div>
