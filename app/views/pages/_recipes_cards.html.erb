@@ -22,13 +22,20 @@
             <% end %>
           </p>
           <% if user_signed_in? %>
-            <%= link_to favorites_path(recipe: recipe), method: :post,
-                                                        remote: true do %>
-              <i class="fas fa-solid fa-heart heart-icon" data-action='click->favorite#save'></i>
-            <% end %>
+            <% if current_user.recipes.pluck(:spoon_id).include?(recipe['id']) %>
+              <%= link_to favorite_path(current_user.favorites.where(recipe: recipe)), method: :delete,
+                                                    remote: true do %>
+                <i class="fas fa-solid fa-heart heart-icon" data-action='click->favorite#save' data-favorite-target="heart"></i>
+              <% end %>
             <% else %>
+              <%= link_to favorites_path(recipe: recipe), method: :post,
+                                                          remote: true do %>
+                <i class="fas fa-solid fa-heart heart-icon heart-icon-inactive" data-action='click->favorite#save' data-favorite-target="heart"></i>
+              <% end %>
+            <% end %>
+          <% else %>
             <%= link_to new_user_session_path do %>
-              <i class="fas fa-solid fa-heart heart-icon"></i>
+              <i class="fas fa-solid fa-heart heart-icon heart-icon-inactive"></i>
             <% end %>
           <% end %>
         </div>
@@ -52,7 +59,7 @@
       </div>
     <% end %>
     <div class="flash flash-warning alert alert-dismissible fade show d-none" role="alert" data-favorite-target="duplicate">
-      <span><strong>Mmh</strong> 🤔 seems you've already added this recipe</span>
+      <span>Recipe successfully <strong>removed</strong> from your favorites!</span>
       <a data-action='click->favorite#close'>
         <i class="fas fa-times"></i>
       </a>

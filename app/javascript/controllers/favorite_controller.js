@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "alert", "duplicate"]
+  static targets = [ "alert", "duplicate", "heart"]
 
   connect() {
   }
@@ -9,6 +9,7 @@ export default class extends Controller {
   save(event){
     event.preventDefault();
     const p = event.currentTarget.parentNode;
+    event.currentTarget.classList.toggle("heart-icon-inactive")
     if (p.classList.contains('saved')){
       this.duplicateTarget.classList.remove('d-none');
       setTimeout(() => { this.duplicateTarget.classList.add('d-none'); }, 3000);

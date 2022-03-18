@@ -10,11 +10,11 @@ class PagesController < ApplicationController
     @ingredients = Ingredient.search_by_name(params[:query]) if params[:query].present?
     @recipes = SpoonacularService.new.recipes(params[:ingredients]) if params[:ingredients].present?
     if current_user
-      user_fridge_string = ""
+      @user_fridge_string = ""
       current_user.ingredients.each do |ingredient|
-        user_fridge_string += "#{ingredient.name},+"
+        @user_fridge_string += "#{ingredient.name},+"
       end
-      @user_recipes = SpoonacularService.new.recipes(user_fridge_string[0..-2])
+      @user_recipes = SpoonacularService.new.recipes(@user_fridge_string[0..-2])
     end
 
     respond_to do |format|
