@@ -2,18 +2,16 @@
 
 .btn-header-ingredients {
   margin-left: 10px;
-  color: white;
-  background-color: #728f72;
+  color: #728f72;
+  background-color: transparent;
   border: 1px solid #728f72;
   border-radius: 8px;
-  // box-shadow: 2px 3px 3px rgb(146, 146, 146);
 }
 .btn-header-ingredients:hover {
+  color: #DD4A48;
+  border: 1px solid #DD4A48;
   transition: 0.5s;
-  color: white;
-  box-shadow: 2px 3px 8px white;
-  background-color: #68a768;
-  border: 1px solid #68a768;
+  box-shadow: 2px 3px 8px #DD4A48;
 }
 .btn-ingredients {
   margin-left: 10px;
@@ -37,31 +35,26 @@
   color: white;
   transition: 0.4s;
 }
-.a {
-  flex-direction: column;
-  display: flex;
-}
+
 // -------------containers-------------
 
-.hr-recipes{
-  color: #55555598;
-  margin: 0;
-}
+
 .page-container {
   height: 90vh;
-  justify-content: space-evenly;
 }
 
 .sidebar-ingredients {
-  // position: relative;
-  padding: 60px 0 0 0;
-  height: 0;
-  margin-top: 10px;
+  position: relative;
+  // width: 400px;
+  padding: 0;
 }
 .pantry-header {
-  // height: 100px;
+  height: 100px;
+  padding: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  background-color: rgb(255, 255, 255);
   h2 {
     font-size: 1.25rem;
     color: #DD4A48;
@@ -72,7 +65,6 @@
   .searched-ingredients {
     z-index: 2;
     padding: 10px;
-    width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
   }
 }
@@ -80,11 +72,11 @@
   // background-color: red;
   display: flex;
   justify-content: space-between;
-  // width: 400px;
+  width: 350px;
 }
 
 .categories-container {
-  height: 52vh;
+  height: 65vh;
   overflow-y: scroll;
   padding: 10px;
   background-color: #C0D8C0;
@@ -94,20 +86,16 @@
 
 .container-recipes{
   background-image: url("bg16.jpg");
-  background-position:  right;
+  background-position: bottom left;
   background-size: cover;
   padding: 0;
-  margin: 40px 0 40px 70px;
-  border-radius: 10px;
 }
 
 .grid-ingreditents {
-  // overflow-y: scroll;
-  height: 77vh;
-  padding: 45px 45px;
-
+  overflow-y: scroll;
+  height: 65vh;
+  padding: 10px 0;
 }
-
 // -------------card-category-------------
 
 .card-category {
@@ -147,6 +135,3 @@
 .typed-cursor {
   display: none;
 }
-
-
-// ---------recipes--------
