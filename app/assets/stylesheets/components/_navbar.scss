@@ -8,7 +8,7 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 230px;
-  height: 100px;
+  height: 90px;
 }
 
 li {
@@ -19,9 +19,11 @@ li {
   display: flex;
   justify-content: space-around;
   margin: 0 100px;
+  height: 80px;
 }
 .nav-link{
   color: #728f72;
+  font-size: 15px;
 }
 .nav-link:hover{
   color: white !important;
