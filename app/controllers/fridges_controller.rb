@@ -20,6 +20,10 @@ class FridgesController < ApplicationController
     # end
   end
 
+  def show
+    
+  end
+
   def destroy
     @fridge = Fridge.find(params[:id])
     @fridge.destroy

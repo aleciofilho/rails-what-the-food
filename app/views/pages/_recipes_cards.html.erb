@@ -23,14 +23,15 @@
           </p>
           <% if user_signed_in? %>
             <% if current_user.recipes.pluck(:spoon_id).include?(recipe['id']) %>
-              <%= link_to destroy_favorite_path(spoon_id: recipe['id']), method: :delete,
-                                                                         class: "saved",
-                                                                         remote: true do %>
+              <% saved = true %>
+              <%= link_to favorites_path(recipe: recipe, saved: saved), method: :post,
+                                                                        remote: true do %>
                 <i class="fas fa-solid fa-heart heart-icon" data-action='click->favorite#save' data-favorite-target="heart"></i>
               <% end %>
             <% else %>
-              <%= link_to favorites_path(recipe: recipe), method: :post,
-                                                          remote: true do %>
+              <% saved = false %>
+              <%= link_to favorites_path(recipe: recipe, saved: saved), method: :post,
+                                                                        remote: true do %>
                 <i class="fas fa-solid fa-heart heart-icon heart-icon-inactive" data-action='click->favorite#save' data-favorite-target="heart"></i>
               <% end %>
             <% end %>
