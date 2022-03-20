@@ -2,16 +2,17 @@
 
 .btn-header-ingredients {
   margin-left: 10px;
-  color: #728f72;
-  background-color: transparent;
-  border: 1px solid #728f72;
+  color: white;
+  background-color: #579A62;
+  border: 1px solid #579A62;
   border-radius: 8px;
 }
 .btn-header-ingredients:hover {
-  color: #DD4A48;
-  border: 1px solid #DD4A48;
+  color: white;
+  border: 1px solid #728f72;
+  background-color: #728f72;
   transition: 0.5s;
-  box-shadow: 2px 3px 8px #DD4A48;
+  // box-shadow: 2px 3px 8px #DD4A48;
 }
 .btn-ingredients {
   margin-left: 10px;
@@ -22,8 +23,8 @@
 }
 .btn-ingredients:hover {
   color: white !important;
-  background-color: #DD4A48 !important;
-  border: 1px solid #DD4A48 !important;
+  background-color: #579A62 !important;
+  border: 1px solid #579A62 !important;
 }
 .btn-footer-ingredients {
   color: white;
@@ -54,7 +55,7 @@
 }
 .conter {
   background-image: url("bg16.jpg");
-  background-position:  right;
+  background-position:  bottom;
   background-size: cover;
   margin: 20px 0;
   border-radius: 5px;

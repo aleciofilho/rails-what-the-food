@@ -16,7 +16,7 @@
         <div class="favorites-icons d-flex">
           <p class="card-text">
             <% if recipe['missedIngredientCount'].zero? %>
-              <%= "all ingredients used" %>
+              <%= "all ingredients used", class: "btn-all-used" %>
             <% else %>
               <%= "missing #{recipe['missedIngredientCount']} ingredients" %>
             <% end %>
