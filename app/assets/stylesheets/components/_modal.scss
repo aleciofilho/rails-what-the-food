@@ -1,6 +1,7 @@
 .modal-content {
   border-radius: 7px;
   box-shadow: 2px 2px 4px rgb(94, 93, 93);
+  height: 100%;
 }
 .modal-header {
   color: #728f72;
@@ -79,4 +80,7 @@
 }
 .like-modal {
   color: #728f72;
+}
+.modal-dialog {
+  height: 90%;
 }
