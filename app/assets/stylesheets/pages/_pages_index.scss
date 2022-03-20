@@ -2,16 +2,18 @@
 
 .btn-header-ingredients {
   margin-left: 10px;
-  color: #728f72;
-  background-color: transparent;
-  border: 1px solid #728f72;
+  color: white;
+  background-color: #5ca568;
+  border: 1px solid #5ca568;
   border-radius: 8px;
+  font-weight: bold;
 }
 .btn-header-ingredients:hover {
-  color: #DD4A48;
-  border: 1px solid #DD4A48;
+  color: white;
+  border: 1px solid #728f72;
+  background-color: #728f72;
   transition: 0.5s;
-  box-shadow: 2px 3px 8px #DD4A48;
+  // box-shadow: 2px 3px 8px #DD4A48;
 }
 .btn-ingredients {
   margin-left: 10px;
@@ -22,35 +24,65 @@
 }
 .btn-ingredients:hover {
   color: white !important;
-  background-color: #DD4A48 !important;
-  border: 1px solid #DD4A48 !important;
+  background-color: #5ca568 !important;
+  border: 1px solid #5ca568 !important;
 }
 .btn-footer-ingredients {
   color: white;
-  background-color: #DD4A48;
+  background-color: #c03432;
   border-radius: 8px;
+  font-weight: bold;
 }
 .btn-footer-ingredients:hover {
-  background-color: #728f72;
+  background-color: #DD4A48;
   color: white;
   transition: 0.4s;
 }
 
 // -------------containers-------------
 
-
+// -------------teste-------------
 .page-container {
-  height: 90vh;
+  height: 80vh;
+}
+.cont {
+  // width: 90%;
+  // height: 90vh;
+  // margin: 0 auto;
+  // background-image: url("bg16.jpg");
+  // background-position:  right;
+  // background-size: cover;
+  // border-radius: 10px;
+  padding: 20px ;
+}
+.conter {
+  background-image: url("bg16.jpg");
+  background-position:  bottom;
+  background-size: cover;
+  margin: 20px 0;
+  border-radius: 5px;
 }
 
+.opacity-recipes {
+  background-image: linear-gradient(rgba(125,125,125,0.4),rgba(125,125,125,0.4)), url("bg16.jpg");
+}
+.hr-recipes {
+  color: #9494948c;
+  margin: 0;
+}
+.box {
+  width: 96%;
+  margin: 0 auto;
+}
+// -------------teste-------------
 .sidebar-ingredients {
   position: relative;
   // width: 400px;
   padding: 0;
 }
 .pantry-header {
-  height: 100px;
-  padding: 10px;
+  // height: 100px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,11 +104,11 @@
   // background-color: red;
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  width: 90%;
 }
 
 .categories-container {
-  height: 65vh;
+  height: 61vh;
   overflow-y: scroll;
   padding: 10px;
   background-color: #C0D8C0;
@@ -85,15 +117,14 @@
 
 
 .container-recipes{
-  background-image: url("bg16.jpg");
-  background-position: bottom left;
-  background-size: cover;
-  padding: 0;
+  // background-image: url("bg16.jpg");
+  // background-position: right;
+  // background-size: cover;
 }
 
 .grid-ingreditents {
   overflow-y: scroll;
-  height: 65vh;
+  height: 75vh;
   padding: 10px 0;
 }
 // -------------card-category-------------

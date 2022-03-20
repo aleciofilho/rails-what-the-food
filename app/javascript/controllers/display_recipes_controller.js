@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["ingredient", "fridgeingredient", "input", "recipes", "form", "fridgebar"]
+  static targets = ["ingredient", "fridgeingredient", "input", "recipes", "form", "fridgebar", "background"]
   // static values = {
   //   fridge: Array
   // }
@@ -66,6 +66,8 @@ export default class extends Controller {
     .then(response => response.text())
     .then((data) => {
       this.recipesTarget.innerHTML = data
+      this.fridgebarTarget.classList.add('d-none')
+      this.backgroundTarget.classList.add("opacity-recipes")
     })
   }
 
