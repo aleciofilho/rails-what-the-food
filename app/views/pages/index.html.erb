@@ -21,6 +21,18 @@
 
       <div class="row d-flex">
         <div class="categories-container pb-0">
+          <% if user_signed_in? && current_user.ingredients.count > 0 %>
+            <div class="d-none">
+              <% current_user.ingredients.each do |ingredient| %>
+                <span data-display-recipes-target="fridgeingredient">
+                  <%= ingredient.name %>
+                </span>
+              <% end %>
+            </div>
+            <%= form_tag pages_path, method: :get, class: "d-grid", data: { action: "submit->display-recipes#searchByFridge", display_recipes_target: "fridgebar" }, remote: true  do %>
+              <%= submit_tag "Search by Fridge!", class: "btn btn-footer-ingredients mb-2" %>
+            <% end %>
+          <% end %>
           <% @categories.each do |category| %>
             <div class="card-category mb-3 p-1">
 
@@ -41,18 +53,16 @@
         </div>
       </div>
 
-      <div class="d-flex row justify-content-center m-3">
-          <div class="search-recipes">
-            <%= form_tag pages_path, method: :get, class: "d-grid", data: { action: "submit->display-recipes#buildQuery", display_recipes_target: "form" }, remote: true  do %>
-              <%= text_field_tag :ingredients,
-                  params[:ingredients],
-                  class: "form-control",
-                  type: :hidden,
-                  data: { display_recipes_target: "input" }%>
-              <%= submit_tag "Search recipes", class: "btn  btn-header-ingredients" %>
-            <% end %>
-          </div>
-        </div>
+      <div class="d-flex row justify-content-center my-3">
+        <%= form_tag pages_path, method: :get, class: "d-grid", data: { action: "submit->display-recipes#buildQuery", display_recipes_target: "form" }, remote: true  do %>
+          <%= text_field_tag :ingredients,
+              params[:ingredients],
+              class: "form-control",
+              type: :hidden,
+              data: { display_recipes_target: "input" }%>
+          <%= submit_tag "Search recipes", class: "btn  btn-header-ingredients" %>
+        <% end %>
+      </div>
     </div>
 
     <%# -------------Recipes------------- %>

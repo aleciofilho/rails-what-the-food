@@ -1,11 +1,11 @@
 // ---------Button--------
 
 .btn-header-ingredients {
-  margin-left: 10px;
   color: white;
-  background-color: #579A62;
-  border: 1px solid #579A62;
+  background-color: #5ca568;
+  border: 1px solid #5ca568;
   border-radius: 8px;
+  font-weight: bold;
 }
 .btn-header-ingredients:hover {
   color: white;
@@ -23,25 +23,31 @@
 }
 .btn-ingredients:hover {
   color: white !important;
-  background-color: #579A62 !important;
-  border: 1px solid #579A62 !important;
+  background-color: #5ca568 !important;
+  border: 1px solid #5ca568 !important;
 }
 .btn-footer-ingredients {
   color: white;
-  background-color: #DD4A48;
+  background-color: #c03432;
   border-radius: 8px;
+  font-weight: bold;
 }
 .btn-footer-ingredients:hover {
-  background-color: #728f72;
+  background-color: #DD4A48;
   color: white;
   transition: 0.4s;
+}
+
+// ------------searchbar--------------
+.form-control-ingredients {
+  margin-right: 10px;
 }
 
 // -------------containers-------------
 
 // -------------teste-------------
 .page-container {
-  height: 90vh;
+  height: 80vh;
 }
 .cont {
   // width: 90%;
@@ -102,11 +108,11 @@
   // background-color: red;
   display: flex;
   justify-content: space-between;
-  width: 350px;
+  width: 90%;
 }
 
 .categories-container {
-  height: 57vh;
+  height: 61vh;
   overflow-y: scroll;
   padding: 10px;
   background-color: #C0D8C0;
