@@ -19,16 +19,12 @@
   }
   p{
     color: #DD4A48;
+    font-size: 20px;
   }
 }
 
 //------------- cicles -------------
 
-.cicles-text {
-  h4 {
-    color: #DD4A48;
-  }
-}
 .container-cicles {
   display: flex;
 }
@@ -50,11 +46,12 @@
   background-size: cover;
   background-repeat: no-repeat;
 
+
 }
 .link-cicle-start:hover {
   outline: 1px solid #728f72 ;
   outline-offset: 10px;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 .link-cicle-center {
   border: 1px solid #728f72;
@@ -67,9 +64,9 @@
   height: 200px;
 }
 .link-cicle-center:hover {
-  outline: 1px solid #728f72 ;
+  outline: 1px solid #dd4b48 ;
   outline-offset: 10px;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 .link-cicle-end {
   border: 1px solid #728f72;
@@ -84,16 +81,28 @@
 .link-cicle-end:hover {
   outline: 1px solid #728f72 ;
   outline-offset: 10px;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 .cicles-text {
   background-color: white;
   margin: 0;
-  padding: 140px 30px;
+  padding: 140px 80px;
     h2{
       margin-bottom: 20px;
       color: #728f72;
     }
+}
+.text-cicle {
+  color: #728f72;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.text-cicle-center {
+  color: #DD4A48;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.text-cicle-start, .text-cicle-end {
+  color: #728f72;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 //------------- carousel -------------
@@ -171,11 +180,19 @@
 .carousel-text {
   h5 {
     color: #DD4A48;
-    // font-weight: bold;
+    font-weight: bold;
   }
   p {
     color: #DD4A48;
-    // font-weight: bold;
+    font-weight: bold;
+  }
+}
+.text-carousel-card {
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
   }
 }
 
