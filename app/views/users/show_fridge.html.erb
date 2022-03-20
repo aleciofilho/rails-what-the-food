@@ -1,14 +1,18 @@
 <div class="complete-page"></div>
   <div class="container">
-    <div class="d-flex">
+    <div class="d-flex profile-container">
       <div class="sidebar">
         <div class="avatar-profile d-flex justify-content-center p-3">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "user-image", alt: "user-image" %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "user-image", alt: "user-image" %>
+          <% else %>
+            <%= image_tag "avatar.png", class: "user-image", alt: "avatar" %>
+          <% end %>
         </div>
         <h1><%= @user.name %></h1>
-        <a class="sidebar-option" href="#myprofile">My Profile</a>
-        <a class="sidebar-option" href="#myrecipes">My Recipes</a>
-        <a class="sidebar-option" href="#myfridge">My Fridge</a>
+        <%# <a class="sidebar-option" href="#myprofile">My Profile</a> %>
+        <%= link_to "My recipes", user_path(@current_user), class:"sidebar-option" %>
+        <%# <a class="sidebar-option" href="#myfridge">My Fridge</a> %>
       </div>
 
       <div class="content">

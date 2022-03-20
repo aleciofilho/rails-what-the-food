@@ -1,61 +1,63 @@
 <div class="complete-page"></div>
   <div class="container">
-    <div class="d-flex">
+    <div class="d-flex profile-container">
       <div class="sidebar">
         <div class="avatar-profile d-flex justify-content-center p-3">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "user-image", alt: "user-image" %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "user-image", alt: "user-image" %>
+          <% else %>
+            <%= image_tag "avatar.png", class: "user-image", alt: "avatar" %>
+          <% end %>
         </div>
         <h1><%= @user.name %></h1>
-        <a class="sidebar-option" href="#myprofile">My Profile</a>
-        <a class="sidebar-option" href="#myrecipes">My Recipes</a>
-        <%= link_to show_fridge_path(@current_user) do%>
-          <a class="sidebar-option" >My Fridge</a>
-        <% end %>
+        <%# <a class="sidebar-option" href="#myprofile">My Profile</a>
+        <a class="sidebar-option" href="#myrecipes">My Recipes</a> %>
+        <%= link_to "My fridge", show_fridge_path(@current_user), class:"sidebar-option" %>
       </div>
 
       <div class="content">
 
-        <div class="flex-about mb-5">
+        <div class="flex-about mb-3">
           <div class="about-info">
-            <h1>About me</h1>
-            <p>I am a Web Development student from São Paulo, Brazil. I love cooking new recipes I find at What the Food. </p>
-            <a class="btn-edit-profile" href="#">Edit</a>
+            <h1>Favorite recipes</h1>
           </div>
           <div class="about-image">
           </div>
         </div>
 
-        <div class="fav-recipes">
-          <h1>Favorite recipes</h1>
 
           <!-- Podem mexer a vontade nos cards, eu só queria ver se as infos estavam todas certas -->
           <!-- style: _card.scss -->
-          <% unless current_user.favorites.count == 0 %>
+        <% unless current_user.favorites.count == 0 %>
+          <div class="fav-recipes">
             <% current_user.favorites.each do |favorite| %>
-            <div class="card-product my-2">
-              <img src="<%= favorite.recipe.image %>" />
-              <div class="card-product-infos">
-                <h2><%= favorite.recipe.name %></h2>
-                <p>"<%= sanitize favorite.recipe.description %>..."</p>
-                <div class="icons">
-                  <p><%= favorite.recipe.likes %> <i class="fas fa-thumbs-up"></i></p>
-                  <p><%= favorite.recipe.prep_time %> minutes</p>
-                  <p>Serving <strong><%= favorite.recipe.likes %></strong> people</i></p>
-                </div>
-                <div class="end-card">
-                  <a href="<%=sanitize favorite.recipe.url%>" target="_blank">Go to website</a> |
-                  <%= link_to "delete", favorite_path(favorite),
-                                        method: :delete,
-                                        data: { :confirm => 'Are you sure?'},
-                                        style: "color: red;" %>
+              <div class="card-product my-2">
+                <img src="<%= favorite.recipe.image %>" />
+                <div class="card-product-infos">
+                  <h2><%= favorite.recipe.name %></h2>
+                  <p>"<%= sanitize favorite.recipe.description %>..."</p>
+                  <div class="icons">
+                    <p><%= favorite.recipe.likes %> <i class="fas fa-thumbs-up"></i></p>
+                    <p><%= favorite.recipe.prep_time %> minutes</p>
+                    <p>Serves <strong><%= favorite.recipe.likes %></strong> people</i></p>
+                  </div>
+                  <div class="end-card pt-1">
+                    <a href="<%=sanitize favorite.recipe.url%>" target="_blank", style="color: #728f72;">Go to recipe's website</a> |
+                    <%= link_to "Remove from favorites", favorite_path(favorite),
+                                          method: :delete,
+                                          data: { :confirm => 'Are you sure?'},
+                                          style: "color: #DD4A48;" %>
+                  </div>
                 </div>
               </div>
-            </div>
             <% end %>
-          <% else %>
-            <p style="color: red;">You didn't add any recipes yet...</p>
-          <% end %>
-        </div>
+          </div>
+        <% else %>
+          <div class="no-recipes-profile mt-5 pt-5">
+            <h3 class="no-recipes-message">Seems you haven't added any recipes yet...</h3>
+            <%= link_to "Find a recipe!", pages_path, class: "find-recipe-button" %>
+          </div>
+        <% end %>
       </div>
 
     </div>
