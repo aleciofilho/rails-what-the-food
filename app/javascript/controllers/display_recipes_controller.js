@@ -1,7 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["ingredient", "input", "recipes", "form", "background"]
+  static targets = ["ingredient", "fridgeingredient", "input", "recipes", "form", "fridgebar", "background"]
+  // static values = {
+  //   fridge: Array
+  // }
 
   connect() {
     console.log("Controller connected");
@@ -11,6 +14,29 @@ export default class extends Controller {
     event.currentTarget.classList.toggle('active');
     // this.ingredientTarget.classList.toggle('active');
     console.log("active");
+  }
+
+  activateAll () {
+    this.fridgeingredientTargets.forEach(fridgeIngredient => {
+      this.ingredientTargets.forEach(ingredient => {
+        if (ingredient.innerText.trim() === fridgeIngredient.innerText.trim()) {
+          ingredient.classList.add('active');
+        }
+      })
+    })
+    // this.fridgeValue.forEach(fridge_item => {
+    //   this.ingredientTargets.forEach(ingredient => {
+    //     if (ingredient.innerText === fridge_item) {
+    //       ingredient.classList.add('active')
+    //     }
+    //   })
+    // })
+  }
+
+  searchByFridge (event) {
+    event.preventDefault()
+    this.activateAll()
+    this.buildQuery(event)
   }
 
   buildQuery (event) {
@@ -27,20 +53,29 @@ export default class extends Controller {
     this.formTarget.reset();
   }
 
-  // fetchRecipes (query) {
-  //   fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=ad1c142c27cb4f82a8078acc4e1522d5&ingredients=${query}&number=10`)
-  //   .then(response => response.json())
-  //   .then(data => this.insertRecipes(data))
-  // }
+  fetchFridgeIngredients () {
+    fetch(`${this.fridgebarTarget.action}`, { headers: { accept: "text/plain" }})
+    .then(response => response.text())
+    .then((data) => {
+      console.log(data)
+    })
+  }
 
   fetchRails (query) {
     fetch(`${this.formTarget.action}?ingredients=${query}`, { headers: { accept: "text/plain" }})
     .then(response => response.text())
     .then((data) => {
       this.recipesTarget.innerHTML = data
+      this.fridgebarTarget.classList.add('d-none')
       this.backgroundTarget.classList.add("opacity-recipes")
     })
   }
+
+  // fetchRecipes (query) {
+  //   fetch(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=ad1c142c27cb4f82a8078acc4e1522d5&ingredients=${query}&number=10`)
+  //   .then(response => response.json())
+  //   .then(data => this.insertRecipes(data))
+  // }
 
   // from stackoverflow
 
