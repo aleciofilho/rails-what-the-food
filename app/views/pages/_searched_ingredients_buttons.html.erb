@@ -1,7 +1,7 @@
 <% if ingredients %>
   <div class="searched-ingredients" data-search-ingredients-target="ingredients">
     <% ingredients.each do |i| %>
-      <span class="btn btn-outline-primary btn-sm mb-1" data-action="click->search-ingredients#activate"><%= i.name %></span>
+      <span class="btn btn-ingredients btn-outline-success btn-sm mb-1" data-action="click->search-ingredients#activate"><%= i.name %></span>
     <% end %>
   </div>
 <% end %>
