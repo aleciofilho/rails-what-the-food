@@ -166,6 +166,28 @@ div.content {
   box-shadow: 1px 1px 5px #DD4A48;
 }
 
+.fridge-container {
+  border-radius: 4px;
+  flex-grow: 1;
+  margin-left: 15px;
+  background-size: cover;
+  background-image: linear-gradient(rgba(180,180,180,0.5),rgba(220,220,220,0.5)), url("empty-fridge.jpg");
+  background-position: center;
+  padding: 10px 0;
+  width: 100%;
+
+  h1 {
+    color: #DD4A48;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+}
+
+
 .fav-recipes {
   flex-grow: 1;
   overflow-y: scroll;
