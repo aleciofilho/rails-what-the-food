@@ -1,6 +1,6 @@
 <% if @recipes  %>
   <% @recipes.each do |recipe| %>
-    <div class="card col-4 col-sm-8 m-1 fit-content" style="width: 18rem;" data-controller="show-details" data-show-details-target="card">
+    <div class="card col-4 col-sm-8 m-2 fit-content" style="width: 22rem;" data-controller="show-details" data-show-details-target="card">
       <%= image_tag recipe['image'], class: "card-img-top" %>
       <div class="card-body d-flex flex-column">
       <div class="title-recipes-card d-flex  justify-content-center">
@@ -16,7 +16,7 @@
         <div class="favorites-icons d-flex">
           <p class="card-text">
             <% if recipe['missedIngredientCount'].zero? %>
-              <%= "all ingredients used" %>
+              <span class="btn-all-used">all ingredients used! </span>
             <% else %>
               <%= "missing #{recipe['missedIngredientCount']} ingredients" %>
             <% end %>
