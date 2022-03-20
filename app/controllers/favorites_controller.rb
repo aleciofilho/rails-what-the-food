@@ -32,4 +32,20 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find_by(user: current_user, recipe: recipe)
     @favorite.destroy
   end
+
+  def destroy_favorite
+    recipe = Recipe.find_by(spoon_id: params[:spoon_id])
+    @favorite = Favorite.find_by(user: current_user, recipe: recipe)
+    if @favorite
+      @favorite.destroy
+      @text = "destroyed"
+    else
+      @favorite = Favorite.create(user: current_user, recipe: recipe)
+      @text = "created"
+    end
+
+    responto_to do |format|
+      format.text { render text: @text }
+    end
+  end
 end
