@@ -2,15 +2,16 @@ class FridgesController < ApplicationController
   def create
     @ingredients = params[:ingredients].split(',')
     @ingredients.each do |ingredient|
-      @ingredient = Ingredient.find_by(name: ingredient)
-      @fridge = Fridge.new
-      @fridge.ingredient = @ingredient
-      @fridge.user = current_user
-      @fridge.save!
+      unless current_user.ingredients.pluck(:name).include?(ingredient)
+        @fridge = Fridge.new
+        @ingredient = Ingredient.find_by(name: ingredient)
+        @fridge.ingredient = @ingredient
+        @fridge.user = current_user
+        @fridge.save!
+      end
     end
 
-    redirect_to user_path(current_user)
-
+    redirect_to show_fridge_path(current_user)
     # if @fridge.save
     #   respond_to do |format|
     #     format.html # Follow regular flow of Rails
@@ -24,6 +25,6 @@ class FridgesController < ApplicationController
     @fridge = Fridge.find(params[:id])
     @fridge.destroy
 
-    redirect_to user_path(current_user)
+    redirect_to show_fridge_path(current_user)
   end
 end

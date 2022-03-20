@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users, only: %i[show]
+  resources :users, only: %i[show] do
+    resources :fridges, only: %i[show]
+  end
 
   root to: 'pages#home'
 
@@ -14,5 +16,6 @@ Rails.application.routes.draw do
 
   resources :recipes, only: %i[index]
   resources :fridges, only: %i[create destroy]
+  get 'users/:id/fridge', to: 'users#show_fridge', as: :show_fridge
   resources :favorites, only: %i[create destroy]
 end
