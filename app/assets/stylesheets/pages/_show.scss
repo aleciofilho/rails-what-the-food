@@ -3,7 +3,7 @@
   margin: 0;
   padding: 15px;
   width: 30vw;
-  background-color: #DD4A48;
+  background-color: #728f72;
   height: 150vh;
   align-items: center;
   position: sticky;
@@ -30,7 +30,7 @@
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #728f72;
+  background-color: #DD4A48;
   color: white;
 }
 
@@ -42,6 +42,7 @@ div.content {
 
 .flex-about {
   display: flex;
+  margin-left: 10px;
   width: 100%;
   height: 43vh;
   background-image: linear-gradient(to right, #ffffff93, #728f72);;
@@ -124,6 +125,7 @@ div.content {
 }
 
 .fav-recipes {
+  margin-left: 10px;
   background-size: cover;
   background-image: linear-gradient(to right, #ffffff93, #e08281);
   background-position: center;
@@ -131,7 +133,7 @@ div.content {
 }
 
 .fav-recipes h1 {
-  color: black;
+  color: #728f72;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
@@ -141,6 +143,7 @@ div.content {
 }
 
 .my-fridge-class {
+  margin-left: 10px;
   background-size: cover;
   background-image: linear-gradient(to bottom, #ffffff93, #728f72);
   background-position: center;
