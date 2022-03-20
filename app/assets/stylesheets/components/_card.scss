@@ -3,7 +3,7 @@
   // overflow-y: auto;
 }
 .card {
-  height: 340px;
+  height: 380px;
   width: 300px;
   padding: 5px;
 }
@@ -71,4 +71,10 @@
 }
 .card-body {
   justify-content: space-between;
+}
+.card-text {
+  color: #DD4A48;
+}
+.btn-all-used {
+  color: #728f72;
 }

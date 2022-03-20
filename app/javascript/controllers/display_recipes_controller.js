@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["ingredient", "input", "recipes", "form"]
+  static targets = ["ingredient", "input", "recipes", "form", "background"]
 
   connect() {
     console.log("Controller connected");
@@ -38,6 +38,7 @@ export default class extends Controller {
     .then(response => response.text())
     .then((data) => {
       this.recipesTarget.innerHTML = data
+      this.backgroundTarget.classList.add("opacity-recipes")
     })
   }
 
