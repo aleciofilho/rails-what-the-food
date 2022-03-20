@@ -16,7 +16,7 @@
       </div>
       <div class="modal-body">
         <div class="modal-icons d-flex justify-content-around">
-          <p data-show-details-target="likes" class="like-modal"></p>|
+          <p data-show-details-target="likes"></p>|
           <p data-show-details-target="serving"></p>|
           <p data-show-details-target="minutes"></p>
         </div>
@@ -25,6 +25,9 @@
 
               <p data-show-details-target="url" class="btn-modal"><br></p>
 
+          </div>
+          <div class="d-none" data-show-details-target="dotenv">
+            <%= ENV['SPOON_KEY'] %>
           </div>
 
       </div>
