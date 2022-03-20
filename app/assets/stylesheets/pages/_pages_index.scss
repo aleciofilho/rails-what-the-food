@@ -1,7 +1,6 @@
 // ---------Button--------
 
 .btn-header-ingredients {
-  margin-left: 10px;
   color: white;
   background-color: #5ca568;
   border: 1px solid #5ca568;
@@ -37,6 +36,11 @@
   background-color: #DD4A48;
   color: white;
   transition: 0.4s;
+}
+
+// ------------searchbar--------------
+.form-control-ingredients {
+  margin-right: 10px;
 }
 
 // -------------containers-------------
