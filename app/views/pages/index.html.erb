@@ -1,22 +1,22 @@
-<div class="page-container"  data-controller="display-recipes search-ingredients search-by-fridge" data-display-recipes-fridge-value='["garlic", "onion"]'>
+<div class="page-container"  data-controller="display-recipes search-ingredients search-by-fridge">
   <div class="row d-flex">
-    <div class=" sidebar-ingredients col-4">
-      <div class="pantry-header">
-        <h2> Ingredients</h2>
+    <div class="sidebar-ingredients col-4">
+        <div class="pantry-header">
+          <h2> Ingredients</h2>
 
-        <%= form_tag pages_path, method: :get, class: "d-flex pantry-search-bar", data: { action: "submit->search-ingredients#search", search_ingredients_target: "form" }, remote: true do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control form-control-ingredients",
-            data: { search_ingredients_target: "input" },
-            placeholder: "add/remove ingredients"
-          %>
-          <%= submit_tag "Search", class: "btn-header-ingredients btn" %>
-        <% end %>
+          <%= form_tag pages_path, method: :get, class: "d-flex pantry-search-bar", data: { action: "submit->search-ingredients#search", search_ingredients_target: "form" }, remote: true do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control form-control-ingredients",
+              data: { search_ingredients_target: "input" },
+              placeholder: "add/remove ingredients"
+            %>
+            <%= submit_tag "Search", class: "btn-header-ingredients btn" %>
+          <% end %>
 
-        <div class="searched-ingredients" data-search-ingredients-target="ingredients">
+          <div class="searched-ingredients" data-search-ingredients-target="ingredients">
+          </div>
         </div>
-      </div>
     </div>
     <div class="text-header-ingredients d-flex justify-content-center align-items-center col-8">
       <h2 class="mt-2" data-controller="typed-js"></h2>
@@ -26,6 +26,15 @@
         <%# -------------Categories------------- %>
   <div class="row d-flex">
     <div class="categories-container col-4 pb-0">
+      <% if user_signed_in? && current_user.ingredients.count > 0 %>
+        <div class="d-none">
+          <% current_user.ingredients.each do |ingredient| %>
+            <span data-display-recipes-target="fridgeingredient">
+              <%= ingredient.name %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
       <%= form_tag pages_path, method: :get, class: "d-grid", data: { action: "submit->display-recipes#searchByFridge", display_recipes_target: "fridgebar" }, remote: true  do %>
         <%= submit_tag "Search by Fridge!", class: "btn  btn-footer-ingredients mb-1" %>
       <% end %>

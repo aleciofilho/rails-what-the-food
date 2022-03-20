@@ -1,10 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["ingredient", "input", "recipes", "form", "fridgebar"]
-  static values = {
-    fridge: Array
-  }
+  static targets = ["ingredient", "fridgeingredient", "input", "recipes", "form", "fridgebar"]
+  // static values = {
+  //   fridge: Array
+  // }
 
   connect() {
     console.log("Controller connected");
@@ -16,9 +16,14 @@ export default class extends Controller {
     console.log("active");
   }
 
-  activateAll (event) {
-    event.preventDefault()
-    console.log(this.fridgeValue)
+  activateAll () {
+    this.fridgeingredientTargets.forEach(fridgeIngredient => {
+      this.ingredientTargets.forEach(ingredient => {
+        if (ingredient.innerText.trim() === fridgeIngredient.innerText.trim()) {
+          ingredient.classList.add('active');
+        }
+      })
+    })
     // this.fridgeValue.forEach(fridge_item => {
     //   this.ingredientTargets.forEach(ingredient => {
     //     if (ingredient.innerText === fridge_item) {
@@ -30,7 +35,8 @@ export default class extends Controller {
 
   searchByFridge (event) {
     event.preventDefault()
-    this.fetchFridgeIngredients()
+    this.activateAll()
+    this.buildQuery(event)
   }
 
   buildQuery (event) {
