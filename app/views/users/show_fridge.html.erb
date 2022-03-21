@@ -73,7 +73,7 @@
                             </div>
                             <div class="card-body">
                               <% category.ingredients.first(10).each do |i|%>
-                                <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient"
+                                <span class="btn btn-ingredients btn-sm mb-1" data-display-recipes-target="ingredient"
                                                                                   data-fridge-target="ingredient"
                                                                                   data-action="click->display-recipes#activate">
                                   <%= i.name %>
@@ -130,7 +130,7 @@
                           </div>
                           <div class="card-body">
                             <% category.ingredients.first(10).each do |i|%>
-                              <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient"
+                              <span class="btn btn-ingredients btn-sm mb-1" data-display-recipes-target="ingredient"
                                                                                 data-fridge-target="ingredient"
                                                                                 data-action="click->display-recipes#activate">
                                 <%= i.name %>

@@ -19,6 +19,23 @@
   transition: 0.5s;
 }
 
+.btn-search-recipes {
+  color: white;
+  background-color: #5ca568;
+  border: 1px solid #5ca568;
+  border-radius: 8px;
+  font-weight: 400;
+}
+
+.btn-search-recipes:hover {
+  color: #5ca568;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #5ca568;
+  border-radius: 8px;
+  font-weight: 400;
+  transition: 0.5s;
+}
+
 .btn-search-by-fridge {
   color: #5ca568;
   background-color: rgb(255, 255, 255);
