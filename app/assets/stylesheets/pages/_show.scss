@@ -61,6 +61,15 @@ div.content {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.flex-about-recipes {
+  display: flex;
+  margin-left: 15px;
+  width: 100%;
+  height: 260px;
+  background-image: linear-gradient(to right, #ffffff93, #728f72);
+}
+
 .fridge-bg {
   background-image: url("fridge-banner-final.jpg");
   background-position: center right;
