@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ["id", "serving", "minutes", "url", "summary", "likes"]
+  static targets = ["id", "serving", "minutes", "url", "summary", "likes", "dotenv"]
 
   connect() {
   }
@@ -16,7 +16,7 @@ export default class extends Controller {
 
   fetchRecipe(id) {
     console.log(id);
-    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=22b62d5750be4e5ebd66bbcb23d25b52&includeNutrition=false`
+    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${this.dotenvTarget.innerText.trim()}&includeNutrition=false`
     fetch(url)
       .then(response => response.json())
       .then((data) => {
