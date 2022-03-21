@@ -57,9 +57,16 @@ div.content {
   margin-left: 15px;
   width: 100%;
   height: 260px;
-  background-image: linear-gradient(to right, #ffffff93, #728f72);;
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-
+.fridge-bg {
+  background-image: url("fridge-banner-final.jpg");
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .about-info {
   display:flex;
   margin-left: 15px;
@@ -106,9 +113,10 @@ div.content {
   height: 180px;
   max-height: 180px;
   width: 80%;
-  background: url(open-fridge.png);
-  background-size: auto;
-  background-position: center left;
+  // background: url(fridge2.png);
+  // // background-size: contain;
+  // // background-position: right;
+  // // background-repeat: no-repeat;
 }
 
 .no-recipes-profile {
