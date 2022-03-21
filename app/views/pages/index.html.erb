@@ -30,7 +30,7 @@
               <% end %>
             </div>
             <%= form_tag pages_path, method: :get, class: "d-grid", data: { action: "submit->display-recipes#searchByFridge", display_recipes_target: "fridgebar" }, remote: true  do %>
-              <%= submit_tag "Search by Fridge!", class: "btn btn-footer-ingredients mb-2" %>
+              <%= submit_tag "Search by Fridge!", class: "btn btn-search-by-fridge mb-2" %>
             <% end %>
           <% end %>
           <% @categories.each do |category| %>
