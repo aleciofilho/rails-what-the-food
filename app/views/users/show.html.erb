@@ -9,9 +9,10 @@
             <%= image_tag "avatar.png", class: "user-image", alt: "avatar" %>
           <% end %>
         </div>
-        <h1><%= @user.name %></h1>
+        <h2><%= @user.name %></h2>
         <%# <a class="sidebar-option" href="#myprofile">My Profile</a>
         <a class="sidebar-option" href="#myrecipes">My Recipes</a> %>
+        <%= link_to "My recipes", user_path(@current_user), class:"sidebar-option" %>
         <%= link_to "My fridge", show_fridge_path(@current_user), class:"sidebar-option" %>
       </div>
 
@@ -31,7 +32,7 @@
         <% unless current_user.favorites.count == 0 %>
           <div class="fav-recipes">
             <% current_user.favorites.each do |favorite| %>
-              <div class="card-product my-2">
+              <div class="card-product my-3">
                 <img src="<%= favorite.recipe.image %>" />
                 <div class="card-product-infos">
                   <h2><%= favorite.recipe.name %></h2>

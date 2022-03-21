@@ -9,9 +9,10 @@
             <%= image_tag "avatar.png", class: "user-image", alt: "avatar" %>
           <% end %>
         </div>
-        <h1><%= @user.name %></h1>
+        <h2><%= @user.name %></h2>
         <%# <a class="sidebar-option" href="#myprofile">My Profile</a> %>
         <%= link_to "My recipes", user_path(@current_user), class:"sidebar-option" %>
+        <%= link_to "My fridge", show_fridge_path(@current_user), class:"sidebar-option" %>
         <%# <a class="sidebar-option" href="#myfridge">My Fridge</a> %>
       </div>
 
@@ -22,9 +23,10 @@
 
           <!-- Podem mexer a vontade nos cards, eu só queria ver se as infos estavam todas certas -->
           <!-- style: _card.scss -->
-            <div data-fridge-target="ingredients">
+            <div class="fridge-cards-container" data-fridge-target="ingredients">
               <% current_user.categories.uniq.each do |category| %>
-                <div class="category-card">
+                <div class="fridge-category-card">
+                    <h3><%= category.name %></h3>
                   <% current_user.fridges.each do |fridge| %>
                     <% if fridge.ingredient.category == category %>
                       <div class="btn btn-ingredients btn-sm mb-1 button-ingredient" >
