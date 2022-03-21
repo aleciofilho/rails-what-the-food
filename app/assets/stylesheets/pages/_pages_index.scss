@@ -8,11 +8,15 @@
   font-weight: 400;
 }
 .btn-header-ingredients:hover {
-  color: white;
-  border: 1px solid #728f72;
-  background-color: #728f72;
-  transition: 0.5s;
+  // color: white;
+  // border: 1px solid #728f72;
+  // background-color: #728f72;
+  // transition: 0.5s;
   // box-shadow: 2px 3px 8px #DD4A48;
+  border: 1px solid #e08281;
+  background-color: #e08281;
+  color: white;
+  transition: 0.5s;
 }
 
 .btn-search-by-fridge {
@@ -69,7 +73,6 @@
 
 // -------------containers-------------
 
-// -------------teste-------------
 .page-container {
   height: 80vh;
 }
@@ -102,7 +105,7 @@
   width: 96%;
   margin: 0 auto;
 }
-// -------------teste-------------
+
 .sidebar-ingredients {
   position: relative;
   // width: 400px;
@@ -129,7 +132,6 @@
   }
 }
 .pantry-search-bar {
-  // background-color: red;
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -139,18 +141,12 @@
   height: 61vh;
   overflow-y: scroll;
   padding: 10px;
-  background-color: #C0D8C0;
+  background-color: rgb(224, 224, 224);
   border-radius: 5px;
 }
 .categories-container-modal{
   overflow: hidden;
 }
-
-// .container-recipes{
-//   // background-image: url("bg16.jpg");
-//   // background-position: right;
-//   // background-size: cover;
-// }
 
 .grid-ingreditents {
   overflow-y: scroll;
