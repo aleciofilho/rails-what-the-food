@@ -25,7 +25,7 @@
           <!-- style: _card.scss -->
             <div class="fridge-cards-container" data-fridge-target="ingredients">
               <% current_user.categories.uniq.each do |category| %>
-                <div class="fridge-category-card">
+                <div class="fridge-category-card back">
                     <h3><%= category.name %></h3>
                   <% current_user.fridges.each do |fridge| %>
                     <% if fridge.ingredient.category == category %>
