@@ -20,7 +20,14 @@
   background-color: transparent;
   border: 1px solid #728f72;
   border-radius: 10px;
+
 }
+
+.btn-ingredients.active {
+  color: rgb(255, 255, 255);
+  background-color: #728f72;
+}
+
 .btn-ingredients:hover {
   color: white !important;
   background-color: #5ca568 !important;
