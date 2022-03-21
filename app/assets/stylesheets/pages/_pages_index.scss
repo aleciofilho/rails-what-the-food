@@ -18,6 +18,23 @@
   color: white;
   transition: 0.5s;
 }
+
+.btn-search-by-fridge {
+  color: #5ca568;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #5ca568;
+  border-radius: 8px;
+  font-weight: 400;
+}
+.btn-search-by-fridge:hover {
+  width: 100%;
+  color: white;
+  border: 1px solid #728f72;
+  background-color: #728f72;
+  transition: 0.5s;
+  // box-shadow: 2px 3px 8px #DD4A48;
+}
+
 .btn-ingredients {
   margin-left: 10px;
   color: #728f72;
