@@ -1,7 +1,7 @@
 <%# ------------- Banner ------------- %>
 
 <div class="container-home">
-    <div class="text-banner col-6">
+    <div class="text-banner col-8">
       <h1>What The Food - Find your recipe</h1>
       <p>We'll find the perfect recipe for the ingredients you have!</p>
       <%= link_to pages_path do %>
@@ -44,10 +44,15 @@
           <%# <% end %>
         </div>
       </div>
-      <div class="cicles-text col-6">
-          <h4 class="text-cicle-start">First you can sign up for What the food and have your personalized fridge</h4><br><br>
-          <h4 class="text-cicle-center">You can find your recipes with the ingredients you have</h4><br><br>
-          <h4 class="text-cicle-end">And lastly you can favorite your most loved recipes</h4>
+      <div class="cicles-text d-flex align-items-center col-6">
+      <div class="text-header-ingredients d-flex justify-content-center align-items-center col-8">
+          <h2 class="mt-2" data-controller="typed-js"></h2>
+        </div>
+
+          <%# <h4 class="text-cicle-start">First You can sign up for What the food and manage your fridge</h4><br><br>
+          <h4 class="text-cicle-center">You can Find your recipes with the ingredients you have</h4><br><br>
+          <h4 class="text-cicle-end">And Lastly you can favorite your most loved recipes</h4> %>
+
         </div>
       </div>
 
