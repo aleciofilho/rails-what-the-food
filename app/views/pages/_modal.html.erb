@@ -30,19 +30,19 @@
             <%= ENV['SPOON_KEY'] %>
           </div>
 
-      </div>
-      <div class="ingredients-list d-flex justify-content-around">
-        <div class="used">
-          <p class="youhave-modal"><strong>You have:</strong></p>
-          <% recipe['usedIngredients'].each do |ingredient|%>
-            <p class="youhave-modal"><%= ingredient['name'] %></p>
-          <% end %>
-        </div>
-        <div class="missing">
-          <p class="missing-modal"><strong>Missing:</strong></p>
-            <% recipe['missedIngredients'].each do |ingredient|%>
-              <p class="missing-modal"><%= ingredient['name'] %></p>
+        <div class="ingredients-list mt-3 d-flex justify-content-around">
+          <div class="used using">
+            <p class="youhave-modal"><strong>You have:</strong></p>
+            <% recipe['usedIngredients'].each do |ingredient|%>
+              <p class="youhave-modal"><%= ingredient['name'] %></p>
             <% end %>
+          </div>
+          <div class="missing using">
+            <p class="missing-modal"><strong>Missing:</strong></p>
+              <% recipe['missedIngredients'].each do |ingredient|%>
+                <p class="missing-modal"><%= ingredient['name'] %></p>
+              <% end %>
+          </div>
         </div>
       </div>
       <!--

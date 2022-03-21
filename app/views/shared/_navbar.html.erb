@@ -14,11 +14,17 @@
               <%= link_to "Home", root_path, class: "nav-link" %>
             </li>
             <li class="nav-item btn-navbar">
-              <%= link_to "About us", "#", class: "nav-link" %>
+              <a class="nav-link" href="#about">About us</a>
             </li>
-            <li class="nav-item btn-navbar">
-              <%= link_to "My profile", "#", class: "nav-link" %>
-            </li>
+            <% if user_signed_in? %>
+              <li class="nav-item btn-navbar">
+                <%= link_to "My profile", user_path(current_user), class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item btn-navbar">
+                <%= link_to "My profile", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
             <li class="nav-item btn-navbar">
               <%= link_to "Recipes", pages_path, class: "nav-link" %>
             </li>
