@@ -37,6 +37,7 @@ export default class extends Controller {
     event.preventDefault()
     this.activateAll()
     this.buildQuery(event)
+    this.fridgebarTarget.classList.add('d-none')
   }
 
   buildQuery (event) {
@@ -66,7 +67,6 @@ export default class extends Controller {
     .then(response => response.text())
     .then((data) => {
       this.recipesTarget.innerHTML = data
-      this.fridgebarTarget.classList.add('d-none')
       this.backgroundTarget.classList.add("opacity-recipes")
     })
   }

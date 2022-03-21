@@ -1,14 +1,17 @@
+.profile-container {
+  height: 83vh;
+}
+
 .sidebar {
-  max-height: 150vh;
   margin: 0;
   padding: 15px;
   background-color: #728f72;
-  height: 150vh;
+  height: 100%;
   align-items: center;
   position: sticky;
   top: 0;
 
-  h1 {
+  h2 {
     color: white;
     font-weight: bold;
     text-align: center;
@@ -40,9 +43,11 @@
 }
 
 div.content {
+  display: flex;
+  flex-direction: column;
   padding: 1px 16px;
-  height: 1000px;
-  overflow-y: scroll;
+  height: 100%;
+  flex-grow: 1;
   overflow-x: hidden;
 }
 
@@ -50,7 +55,7 @@ div.content {
   display: flex;
   margin-left: 15px;
   width: 100%;
-  height: 43vh;
+  height: 440px;
   background-image: linear-gradient(to right, #ffffff93, #728f72);;
 }
 
@@ -86,6 +91,36 @@ div.content {
   background-position: center left;
 }
 
+.no-recipes-profile {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-recipes-message {
+  color: #DD4A48;
+}
+
+.find-recipe-button {
+  margin-top: 24px;
+  text-decoration: none;
+  color: white;
+  background-color: #5ca568;
+  border: 1px solid #5ca568;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+
+  &:hover {
+    color: white;
+    border: 1px solid #728f72;
+    background-color: #728f72;
+    transition: 0.5s;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
@@ -104,7 +139,7 @@ div.content {
 }
 
 .user-image {
-  width: 95%;
+  width: 14rem;
   border-radius: 50%;
 }
 
@@ -131,12 +166,35 @@ div.content {
   box-shadow: 1px 1px 5px #DD4A48;
 }
 
+.fridge-container {
+  border-radius: 4px;
+  flex-grow: 1;
+  margin-left: 15px;
+  background-size: cover;
+  background-image: linear-gradient(rgba(180,180,180,0.5),rgba(220,220,220,0.5)), url("empty-fridge.jpg");
+  background-position: center;
+  padding: 10px 0;
+  width: 100%;
+
+  h1 {
+    color: #DD4A48;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+}
+
+
 .fav-recipes {
+  flex-grow: 1;
+  overflow-y: scroll;
   margin-left: 15px;
   background-size: cover;
   background-image: linear-gradient(to right, #ffffff93, #728f72);
   background-position: center;
-  padding: 10px 0;
   width: 100%;
 }
 
@@ -153,6 +211,7 @@ div.content {
 .card-product {
   margin-left: 40px;
   margin-right: 40px;
+  border-radius: 6px;
 }
 
 .my-fridge-class {
@@ -170,6 +229,32 @@ div.content {
       font-weight: bold;
       grid-column-start: 1;
     }
+}
+
+.fridge-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 12px;
+}
+
+.fridge-category-card {
+  // width: 90vw;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+
+  .card-category-header {
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    height: 100px;
+
+    h2 {
+      font-size: 1rem;
+      color: white;
+      text-shadow: 1px 1px 3px rgb(104, 97, 97);
+      font-weight: bold;
+    }
+  }
 }
 
 .add-ingredients {

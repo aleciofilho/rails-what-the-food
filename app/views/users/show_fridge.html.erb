@@ -1,40 +1,52 @@
 <div class="complete-page"></div>
   <div class="container">
-    <div class="d-flex">
+    <div class="d-flex profile-container">
       <div class="sidebar">
         <div class="avatar-profile d-flex justify-content-center p-3">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/krokrob", class: "user-image", alt: "user-image" %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "user-image", alt: "user-image" %>
+          <% else %>
+            <%= image_tag "avatar.png", class: "user-image", alt: "avatar" %>
+          <% end %>
         </div>
-        <h1><%= @user.name %></h1>
-        <%= link_to user_path(current_user) do%>
-          <a class="sidebar-option">My Recipes</a>
-        <% end %>
+        <h2><%= @user.name %></h2>
+        <%# <a class="sidebar-option" href="#myprofile">My Profile</a> %>
+        <%= link_to "My recipes", user_path(@current_user), class:"sidebar-option" %>
+        <%= link_to "My fridge", show_fridge_path(@current_user), class:"sidebar-option" %>
+        <%# <a class="sidebar-option" href="#myfridge">My Fridge</a> %>
       </div>
 
       <div class="content">
 
-        <div class="fav-recipes">
+        <div class="fridge-container">
           <h1>My Fridge</h1>
 
           <!-- Podem mexer a vontade nos cards, eu só queria ver se as infos estavam todas certas -->
           <!-- style: _card.scss -->
-            <div data-fridge-target="ingredients">
-              <% current_user.fridges.each do |fridge| %>
-                <div class="btn btn-ingredients btn-sm mb-1 button-ingredient" >
-                  <%= fridge.ingredient.name %>
-                  <div class="button-delete rounded-circle d-flex justify-content-center align-items-center" >
-                    <%= link_to "x",
-                                fridge_path(fridge),
-                                method: :delete,
-                                data: { :confirm => 'Are you sure?'},
-                                style: "color: white;" %>
-                  </div>
+            <div class="fridge-cards-container" data-fridge-target="ingredients">
+              <% current_user.categories.uniq.each do |category| %>
+                <div class="fridge-category-card">
+                    <h3><%= category.name %></h3>
+                  <% current_user.fridges.each do |fridge| %>
+                    <% if fridge.ingredient.category == category %>
+                      <div class="btn btn-ingredients btn-sm mb-1 button-ingredient" >
+                        <%= fridge.ingredient.name %>
+                        <div class="button-delete rounded-circle d-flex justify-content-center align-items-center" >
+                          <%= link_to "x",
+                                      fridge_path(fridge),
+                                      method: :delete,
+                                      data: { :confirm => 'Are you sure?'},
+                                      style: "color: white;" %>
+                        </div>
+                      </div>
+                    <% end %>
+                  <% end %>
                 </div>
               <% end %>
             </div>
             <!-- Button trigger modal -->
             <div class="d-flex align-items-center justify-content-center mt-4">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <button type="button" class="btn btn-header-ingredients" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 Add items to your fridge
               </button>
             </div>
