@@ -26,36 +26,90 @@
           </div>
         </div>
 
-        <div class="fridge-container">
-
-          <!-- Podem mexer a vontade nos cards, eu só queria ver se as infos estavam todas certas -->
-          <!-- style: _card.scss -->
-            <div class="fridge-cards-container" data-fridge-target="ingredients">
-              <% current_user.categories.uniq.each do |category| %>
-                <div class="fridge-category-card p-1">
-                  <div class="fridge-category-card-header back d-flex justify-content-center align-items-center">
-                    <h3><%= category.name %></h3>
-                  </div>
-                  <div class="fridge-category-card-body">
-                    <% current_user.fridges.each do |fridge| %>
-                      <% if fridge.ingredient.category == category %>
-                        <div class="btn fridge-ingredient-btn mb-1 button-ingredient" >
-                          <%= fridge.ingredient.name %>
-                          <div class="button-delete rounded-circle d-flex justify-content-center align-items-center" >
-                            <%= link_to "x",
-                                        fridge_path(fridge),
-                                        method: :delete,
-                                        data: { :confirm => 'Are you sure?'},
-                                        style: "color: white;" %>
+          <% if current_user.ingredients.count > 0 %>
+            <div class="fridge-container">
+              <div class="fridge-cards-container" data-fridge-target="ingredients">
+                <% current_user.categories.uniq.each do |category| %>
+                  <div class="fridge-category-card p-1">
+                    <div class="fridge-category-card-header back d-flex justify-content-center align-items-center">
+                      <h3><%= category.name %></h3>
+                    </div>
+                    <div class="fridge-category-card-body">
+                      <% current_user.fridges.each do |fridge| %>
+                        <% if fridge.ingredient.category == category %>
+                          <div class="btn fridge-ingredient-btn mb-1 button-ingredient" >
+                            <%= fridge.ingredient.name %>
+                            <div class="button-delete rounded-circle d-flex justify-content-center align-items-center" >
+                              <%= link_to "x",
+                                          fridge_path(fridge),
+                                          method: :delete,
+                                          data: { :confirm => 'Are you sure?'},
+                                          style: "color: white;" %>
+                            </div>
                           </div>
-                        </div>
+                        <% end %>
                       <% end %>
-                    <% end %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">Add the ingredients you have at home:</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div data-controller="display-recipes fridge">
+                      <div class="categories-container-modal cards d-grid">
+                        <% @categories.each do |category| %>
+                          <div class="card-category mb-2 p-1">
+                            <div class="card-category-header">
+                              <div class="card-category-header back d-flex justify-content-center align-items-center">
+                                <h2><%= category.name %></h2>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <% category.ingredients.first(10).each do |i|%>
+                                <span class="btn btn-outline-primary btn-sm mb-1" data-display-recipes-target="ingredient"
+                                                                                  data-fridge-target="ingredient"
+                                                                                  data-action="click->display-recipes#activate">
+                                  <%= i.name %>
+                                </span>
+                              <%end%>
+                            </div>
+                          </div>
+                        <% end %>
+                      </div>
+                      <%= form_tag fridges_path(ingredient: params[:ingredient]),
+                                              method: :post,
+                                              class: "d-grid search-recipes",
+                                              data: { action: "submit->fridge#buildQuery",
+                                              fridge_target: "form" }  do %>
+                      <%= text_field_tag :ingredients,
+                          nil,
+                          type: :hidden,
+                          data: { fridge_target: "input" }%>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-footer-ingredients" data-bs-dismiss="modal">Close</button>
+                      <%= submit_tag "Add to your fridge", class: "btn btn-header-ingredients" %>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
-              <% end %>
+              </div>
             </div>
-
+            <!-- Button trigger modal -->
+            <div class="d-flex align-items-center justify-content-center py-2 w-100 btn-fridge-ingredients">
+              <button type="button" class="btn btn-header-ingredients w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Add items to your fridge
+              </button>
+            </div>
+          <% else %>
             <!-- Modal -->
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg">
@@ -105,13 +159,16 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Button trigger modal -->
-          <div class="d-flex align-items-center justify-content-center py-2 w-100 btn-fridge-ingredients">
-            <button type="button" class="btn btn-header-ingredients w-100" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              Add items to your fridge
-            </button>
-          </div>
+            <div class="empty-fridge-container">
+              <h3>Your fridge is currently empty...</h3>
+              <div class="d-flex align-items-center justify-content-center py-2 btn-empty-fridge-ingredients">
+              <button type="button" class="btn find-recipe-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Add items to your fridge
+              </button>
+            </div>
+            </div>
+          <% end %>
+
         </div>
       </div>
     </div>
