@@ -42,10 +42,7 @@
 }
 .ingredients-list {
   padding: 15px 0;
-  overflow-y: scroll;
-}
-.modal-body, .ingredients-list {
-  background-image: linear-gradient(to right, #ffffff93, #8da88d6c);
+  overflow-y: hidden;
 }
 .btn-modal {
   background-color: #728f72;
