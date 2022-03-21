@@ -18,29 +18,40 @@
 
       <div class="content">
 
+        <div class="flex-about mb-3">
+          <div class="about-info">
+            <h1>My Fridge</h1>
+          </div>
+          <div class="fridge-image">
+          </div>
+        </div>
+
         <div class="fridge-container">
-          <h1>My Fridge</h1>
 
           <!-- Podem mexer a vontade nos cards, eu só queria ver se as infos estavam todas certas -->
           <!-- style: _card.scss -->
             <div class="fridge-cards-container" data-fridge-target="ingredients">
               <% current_user.categories.uniq.each do |category| %>
-                <div class="fridge-category-card">
+                <div class="fridge-category-card p-1">
+                  <div class="fridge-category-card-header back d-flex justify-content-center align-items-center">
                     <h3><%= category.name %></h3>
-                  <% current_user.fridges.each do |fridge| %>
-                    <% if fridge.ingredient.category == category %>
-                      <div class="btn btn-ingredients btn-sm mb-1 button-ingredient" >
-                        <%= fridge.ingredient.name %>
-                        <div class="button-delete rounded-circle d-flex justify-content-center align-items-center" >
-                          <%= link_to "x",
-                                      fridge_path(fridge),
-                                      method: :delete,
-                                      data: { :confirm => 'Are you sure?'},
-                                      style: "color: white;" %>
+                  </div>
+                  <div class="fridge-category-card-body">
+                    <% current_user.fridges.each do |fridge| %>
+                      <% if fridge.ingredient.category == category %>
+                        <div class="btn fridge-ingredient-btn mb-1 button-ingredient" >
+                          <%= fridge.ingredient.name %>
+                          <div class="button-delete rounded-circle d-flex justify-content-center align-items-center" >
+                            <%= link_to "x",
+                                        fridge_path(fridge),
+                                        method: :delete,
+                                        data: { :confirm => 'Are you sure?'},
+                                        style: "color: white;" %>
+                          </div>
                         </div>
-                      </div>
+                      <% end %>
                     <% end %>
-                  <% end %>
+                  </div>
                 </div>
               <% end %>
             </div>
