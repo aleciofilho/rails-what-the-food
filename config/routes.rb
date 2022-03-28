@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   delete "favorites/delete/:spoon_id", to: "favorites#destroy_favorite", as: :destroy_favorite
+  post "favorites/toggle/:spoon_id", to: "favorites#toggle_favorite", as: :toggle_favorite
 
   resources :recipes, only: %i[index]
   resources :fridges, only: %i[create destroy]
